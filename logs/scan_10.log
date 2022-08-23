@@ -1,0 +1,743 @@
+2022-08-21 06:08:01,955--setting seed to 2022...
+2022-08-21 06:10:23,691--setting seed to 2022...
+2022-08-21 06:10:24,292--len dataset: 50000
+2022-08-21 06:10:24,292--batch_size: 128, len dataloader: 390
+2022-08-21 06:10:24,292--train img_size: 32
+2022-08-21 06:10:24,456--model: ScanModel(
+  (backbone): ResNet(
+    (conv1): Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (layer1): Sequential(
+      (0): BasicBlock(
+        (conv1): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (shortcut): Sequential()
+      )
+      (1): BasicBlock(
+        (conv1): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (shortcut): Sequential()
+      )
+    )
+    (layer2): Sequential(
+      (0): BasicBlock(
+        (conv1): Conv2d(64, 128, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+        (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (shortcut): Sequential(
+          (0): Conv2d(64, 128, kernel_size=(1, 1), stride=(2, 2), bias=False)
+          (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+      )
+      (1): BasicBlock(
+        (conv1): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (shortcut): Sequential()
+      )
+    )
+    (layer3): Sequential(
+      (0): BasicBlock(
+        (conv1): Conv2d(128, 256, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+        (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (shortcut): Sequential(
+          (0): Conv2d(128, 256, kernel_size=(1, 1), stride=(2, 2), bias=False)
+          (1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+      )
+      (1): BasicBlock(
+        (conv1): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (shortcut): Sequential()
+      )
+    )
+    (layer4): Sequential(
+      (0): BasicBlock(
+        (conv1): Conv2d(256, 512, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+        (bn1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (shortcut): Sequential(
+          (0): Conv2d(256, 512, kernel_size=(1, 1), stride=(2, 2), bias=False)
+          (1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+      )
+      (1): BasicBlock(
+        (conv1): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (shortcut): Sequential()
+      )
+    )
+    (avgpool): AdaptiveAvgPool2d(output_size=(1, 1))
+  )
+  (head): ModuleList(
+    (0): Linear(in_features=512, out_features=10, bias=True)
+  )
+)
+2022-08-21 06:10:24,457--no ckp found, training from scratch
+2022-08-21 06:10:26,094--starting training !
+2022-08-21 06:10:26,094--num_epoch: 50
+2022-08-21 06:10:26,094--init learning_rate: 0.0001
+2022-08-21 06:10:26,095--start epoch : 0
+2022-08-21 06:10:26,095--Train ...
+2022-08-21 06:10:29,236--epoch:[0], batch:[0/390], time used: 0 min 3 sec, loss:[total:-9.207520, consistency:2.299206, entropy:2.301345]
+2022-08-21 06:10:38,811--epoch:[0], batch:[39/390], time used: 0 min 12 sec, loss:[total:-9.283842, consistency:2.215258, entropy:2.299820]
+2022-08-21 06:10:45,775--epoch:[0], batch:[78/390], time used: 0 min 19 sec, loss:[total:-9.441006, consistency:2.042811, entropy:2.296763]
+2022-08-21 06:10:52,842--epoch:[0], batch:[117/390], time used: 0 min 26 sec, loss:[total:-9.707084, consistency:1.764479, entropy:2.294312]
+2022-08-21 06:11:00,569--epoch:[0], batch:[156/390], time used: 0 min 34 sec, loss:[total:-9.813524, consistency:1.670083, entropy:2.296721]
+2022-08-21 06:11:09,640--epoch:[0], batch:[195/390], time used: 0 min 43 sec, loss:[total:-9.911362, consistency:1.581179, entropy:2.298508]
+2022-08-21 06:11:17,149--epoch:[0], batch:[234/390], time used: 0 min 51 sec, loss:[total:-10.023760, consistency:1.475445, entropy:2.299841]
+2022-08-21 06:11:24,433--epoch:[0], batch:[273/390], time used: 0 min 58 sec, loss:[total:-10.068095, consistency:1.417094, entropy:2.297038]
+2022-08-21 06:11:32,111--epoch:[0], batch:[312/390], time used: 1 min 6 sec, loss:[total:-10.163981, consistency:1.335176, entropy:2.299831]
+2022-08-21 06:11:39,614--epoch:[0], batch:[351/390], time used: 1 min 13 sec, loss:[total:-10.225590, consistency:1.265185, entropy:2.298155]
+2022-08-21 06:11:46,791--epoch:[0], avg loss: total:-9.839294, consistency:1.651330, entropy:2.298125, time to run this epoch: 1 min 20 sec
+2022-08-21 06:11:46,792--Checkpoint ...
+2022-08-21 06:11:47,680--Train ...
+2022-08-21 06:11:48,177--epoch:[1], batch:[0/390], time used: 0 min 0 sec, loss:[total:-10.193759, consistency:1.288529, entropy:2.296458]
+2022-08-21 06:11:55,524--epoch:[1], batch:[39/390], time used: 0 min 7 sec, loss:[total:-10.386866, consistency:1.114489, entropy:2.300271]
+2022-08-21 06:12:03,727--epoch:[1], batch:[78/390], time used: 0 min 16 sec, loss:[total:-10.258616, consistency:1.228070, entropy:2.297337]
+2022-08-21 06:12:10,758--epoch:[1], batch:[117/390], time used: 0 min 23 sec, loss:[total:-10.429160, consistency:1.066674, entropy:2.299167]
+2022-08-21 06:12:18,113--epoch:[1], batch:[156/390], time used: 0 min 30 sec, loss:[total:-10.257612, consistency:1.246902, entropy:2.300903]
+2022-08-21 06:12:24,902--epoch:[1], batch:[195/390], time used: 0 min 37 sec, loss:[total:-10.271174, consistency:1.215755, entropy:2.297386]
+2022-08-21 06:12:31,371--epoch:[1], batch:[234/390], time used: 0 min 43 sec, loss:[total:-10.398386, consistency:1.047968, entropy:2.289271]
+2022-08-21 06:12:38,154--epoch:[1], batch:[273/390], time used: 0 min 50 sec, loss:[total:-10.422904, consistency:1.066808, entropy:2.297942]
+2022-08-21 06:12:44,811--epoch:[1], batch:[312/390], time used: 0 min 57 sec, loss:[total:-10.405560, consistency:1.071692, entropy:2.295450]
+2022-08-21 06:12:51,533--epoch:[1], batch:[351/390], time used: 1 min 3 sec, loss:[total:-10.472605, consistency:1.001407, entropy:2.294802]
+2022-08-21 06:12:59,465--epoch:[1], avg loss: total:-10.356617, consistency:1.128478, entropy:2.297019, time to run this epoch: 1 min 11 sec
+2022-08-21 06:12:59,466--Checkpoint ...
+2022-08-21 06:12:59,874--Train ...
+2022-08-21 06:13:00,393--epoch:[2], batch:[0/390], time used: 0 min 0 sec, loss:[total:-10.341616, consistency:1.129396, entropy:2.294202]
+2022-08-21 06:13:07,009--epoch:[2], batch:[39/390], time used: 0 min 7 sec, loss:[total:-10.417971, consistency:1.050730, entropy:2.293740]
+2022-08-21 06:13:13,972--epoch:[2], batch:[78/390], time used: 0 min 14 sec, loss:[total:-10.347786, consistency:1.140411, entropy:2.297639]
+2022-08-21 06:13:20,569--epoch:[2], batch:[117/390], time used: 0 min 20 sec, loss:[total:-10.326912, consistency:1.145164, entropy:2.294415]
+2022-08-21 06:13:27,164--epoch:[2], batch:[156/390], time used: 0 min 27 sec, loss:[total:-10.245947, consistency:1.233357, entropy:2.295861]
+2022-08-21 06:13:33,905--epoch:[2], batch:[195/390], time used: 0 min 34 sec, loss:[total:-10.572433, consistency:0.914827, entropy:2.297452]
+2022-08-21 06:13:40,373--epoch:[2], batch:[234/390], time used: 0 min 40 sec, loss:[total:-10.366107, consistency:1.121752, entropy:2.297572]
+2022-08-21 06:13:46,893--epoch:[2], batch:[273/390], time used: 0 min 47 sec, loss:[total:-10.499979, consistency:0.988327, entropy:2.297661]
+2022-08-21 06:13:53,545--epoch:[2], batch:[312/390], time used: 0 min 53 sec, loss:[total:-10.462934, consistency:0.997263, entropy:2.292039]
+2022-08-21 06:13:59,976--epoch:[2], batch:[351/390], time used: 1 min 0 sec, loss:[total:-10.564016, consistency:0.922157, entropy:2.297235]
+2022-08-21 06:14:06,480--epoch:[2], avg loss: total:-10.460393, consistency:1.017930, entropy:2.295665, time to run this epoch: 1 min 6 sec
+2022-08-21 06:14:06,481--Checkpoint ...
+2022-08-21 06:14:06,901--Train ...
+2022-08-21 06:14:07,400--epoch:[3], batch:[0/390], time used: 0 min 0 sec, loss:[total:-10.461317, consistency:1.016479, entropy:2.295559]
+2022-08-21 06:14:14,246--epoch:[3], batch:[39/390], time used: 0 min 7 sec, loss:[total:-10.519344, consistency:0.971688, entropy:2.298207]
+2022-08-21 06:14:20,990--epoch:[3], batch:[78/390], time used: 0 min 14 sec, loss:[total:-10.326335, consistency:1.155285, entropy:2.296324]
+2022-08-21 06:14:27,582--epoch:[3], batch:[117/390], time used: 0 min 20 sec, loss:[total:-10.511106, consistency:0.969535, entropy:2.296128]
+2022-08-21 06:14:34,015--epoch:[3], batch:[156/390], time used: 0 min 27 sec, loss:[total:-10.433233, consistency:1.050755, entropy:2.296798]
+2022-08-21 06:14:40,611--epoch:[3], batch:[195/390], time used: 0 min 33 sec, loss:[total:-10.596483, consistency:0.833454, entropy:2.285987]
+2022-08-21 06:14:48,555--epoch:[3], batch:[234/390], time used: 0 min 41 sec, loss:[total:-10.540841, consistency:0.922063, entropy:2.292581]
+2022-08-21 06:14:55,185--epoch:[3], batch:[273/390], time used: 0 min 48 sec, loss:[total:-10.353965, consistency:1.085406, entropy:2.287874]
+2022-08-21 06:15:01,791--epoch:[3], batch:[312/390], time used: 0 min 54 sec, loss:[total:-10.509508, consistency:0.961359, entropy:2.294173]
+2022-08-21 06:15:08,337--epoch:[3], batch:[351/390], time used: 1 min 1 sec, loss:[total:-10.454516, consistency:1.045776, entropy:2.300059]
+2022-08-21 06:15:14,635--epoch:[3], avg loss: total:-10.505670, consistency:0.972825, entropy:2.295699, time to run this epoch: 1 min 7 sec
+2022-08-21 06:15:14,636--Checkpoint ...
+2022-08-21 06:15:15,035--Train ...
+2022-08-21 06:15:15,509--epoch:[4], batch:[0/390], time used: 0 min 0 sec, loss:[total:-10.632367, consistency:0.852368, entropy:2.296947]
+2022-08-21 06:15:21,944--epoch:[4], batch:[39/390], time used: 0 min 6 sec, loss:[total:-10.460618, consistency:1.023490, entropy:2.296822]
+2022-08-21 06:15:28,963--epoch:[4], batch:[78/390], time used: 0 min 13 sec, loss:[total:-10.551168, consistency:0.945645, entropy:2.299363]
+2022-08-21 06:15:35,673--epoch:[4], batch:[117/390], time used: 0 min 20 sec, loss:[total:-10.558990, consistency:0.898601, entropy:2.291518]
+2022-08-21 06:15:42,191--epoch:[4], batch:[156/390], time used: 0 min 27 sec, loss:[total:-10.575596, consistency:0.892834, entropy:2.293686]
+2022-08-21 06:15:48,784--epoch:[4], batch:[195/390], time used: 0 min 33 sec, loss:[total:-10.595464, consistency:0.913346, entropy:2.301762]
+2022-08-21 06:15:55,393--epoch:[4], batch:[234/390], time used: 0 min 40 sec, loss:[total:-10.570347, consistency:0.898762, entropy:2.293822]
+2022-08-21 06:16:01,918--epoch:[4], batch:[273/390], time used: 0 min 46 sec, loss:[total:-10.677937, consistency:0.777483, entropy:2.291084]
+2022-08-21 06:16:08,624--epoch:[4], batch:[312/390], time used: 0 min 53 sec, loss:[total:-10.560882, consistency:0.934594, entropy:2.299095]
+2022-08-21 06:16:15,234--epoch:[4], batch:[351/390], time used: 1 min 0 sec, loss:[total:-10.553528, consistency:0.926011, entropy:2.295908]
+2022-08-21 06:16:21,601--epoch:[4], avg loss: total:-10.528565, consistency:0.945089, entropy:2.294731, time to run this epoch: 1 min 6 sec
+2022-08-21 06:16:21,601--Checkpoint ...
+2022-08-21 06:16:22,002--Train ...
+2022-08-21 06:16:22,501--epoch:[5], batch:[0/390], time used: 0 min 0 sec, loss:[total:-10.464242, consistency:0.987908, entropy:2.290430]
+2022-08-21 06:16:29,029--epoch:[5], batch:[39/390], time used: 0 min 7 sec, loss:[total:-10.508548, consistency:0.979907, entropy:2.297691]
+2022-08-21 06:16:37,554--epoch:[5], batch:[78/390], time used: 0 min 15 sec, loss:[total:-10.624656, consistency:0.868971, entropy:2.298725]
+2022-08-21 06:16:43,942--epoch:[5], batch:[117/390], time used: 0 min 21 sec, loss:[total:-10.419301, consistency:1.034717, entropy:2.290803]
+2022-08-21 06:16:50,590--epoch:[5], batch:[156/390], time used: 0 min 28 sec, loss:[total:-10.650124, consistency:0.796325, entropy:2.289290]
+2022-08-21 06:16:57,308--epoch:[5], batch:[195/390], time used: 0 min 35 sec, loss:[total:-10.599450, consistency:0.880997, entropy:2.296089]
+2022-08-21 06:17:03,898--epoch:[5], batch:[234/390], time used: 0 min 41 sec, loss:[total:-10.628829, consistency:0.851054, entropy:2.295977]
+2022-08-21 06:17:10,486--epoch:[5], batch:[273/390], time used: 0 min 48 sec, loss:[total:-10.644800, consistency:0.823476, entropy:2.293655]
+2022-08-21 06:17:17,116--epoch:[5], batch:[312/390], time used: 0 min 55 sec, loss:[total:-10.261063, consistency:1.224894, entropy:2.297191]
+2022-08-21 06:17:23,748--epoch:[5], batch:[351/390], time used: 1 min 1 sec, loss:[total:-10.577274, consistency:0.921548, entropy:2.299764]
+2022-08-21 06:17:30,155--epoch:[5], avg loss: total:-10.542013, consistency:0.930833, entropy:2.294569, time to run this epoch: 1 min 8 sec
+2022-08-21 06:17:30,156--Checkpoint ...
+2022-08-21 06:17:30,577--Train ...
+2022-08-21 06:17:31,042--epoch:[6], batch:[0/390], time used: 0 min 0 sec, loss:[total:-10.499512, consistency:0.975671, entropy:2.295037]
+2022-08-21 06:17:37,561--epoch:[6], batch:[39/390], time used: 0 min 6 sec, loss:[total:-10.620690, consistency:0.818403, entropy:2.287818]
+2022-08-21 06:17:44,660--epoch:[6], batch:[78/390], time used: 0 min 14 sec, loss:[total:-10.697662, consistency:0.797432, entropy:2.299019]
+2022-08-21 06:17:51,221--epoch:[6], batch:[117/390], time used: 0 min 20 sec, loss:[total:-10.302031, consistency:1.165959, entropy:2.293598]
+2022-08-21 06:17:57,981--epoch:[6], batch:[156/390], time used: 0 min 27 sec, loss:[total:-10.686224, consistency:0.818965, entropy:2.301038]
+2022-08-21 06:18:04,307--epoch:[6], batch:[195/390], time used: 0 min 33 sec, loss:[total:-10.584842, consistency:0.885882, entropy:2.294145]
+2022-08-21 06:18:10,940--epoch:[6], batch:[234/390], time used: 0 min 40 sec, loss:[total:-10.478222, consistency:0.976530, entropy:2.290950]
+2022-08-21 06:18:17,560--epoch:[6], batch:[273/390], time used: 0 min 46 sec, loss:[total:-10.602943, consistency:0.878637, entropy:2.296316]
+2022-08-21 06:18:24,749--epoch:[6], batch:[312/390], time used: 0 min 54 sec, loss:[total:-10.556095, consistency:0.921575, entropy:2.295534]
+2022-08-21 06:18:32,015--epoch:[6], batch:[351/390], time used: 1 min 1 sec, loss:[total:-10.585498, consistency:0.910253, entropy:2.299150]
+2022-08-21 06:18:38,292--epoch:[6], avg loss: total:-10.559902, consistency:0.912390, entropy:2.294458, time to run this epoch: 1 min 7 sec
+2022-08-21 06:18:38,293--Checkpoint ...
+2022-08-21 06:18:38,692--Train ...
+2022-08-21 06:18:39,210--epoch:[7], batch:[0/390], time used: 0 min 0 sec, loss:[total:-10.539299, consistency:0.909044, entropy:2.289669]
+2022-08-21 06:18:45,631--epoch:[7], batch:[39/390], time used: 0 min 6 sec, loss:[total:-10.553804, consistency:0.900360, entropy:2.290833]
+2022-08-21 06:18:52,469--epoch:[7], batch:[78/390], time used: 0 min 13 sec, loss:[total:-10.618358, consistency:0.853610, entropy:2.294394]
+2022-08-21 06:18:58,762--epoch:[7], batch:[117/390], time used: 0 min 20 sec, loss:[total:-10.654192, consistency:0.803180, entropy:2.291475]
+2022-08-21 06:19:05,348--epoch:[7], batch:[156/390], time used: 0 min 26 sec, loss:[total:-10.554926, consistency:0.925601, entropy:2.296105]
+2022-08-21 06:19:11,837--epoch:[7], batch:[195/390], time used: 0 min 33 sec, loss:[total:-10.576887, consistency:0.909605, entropy:2.297298]
+2022-08-21 06:19:18,442--epoch:[7], batch:[234/390], time used: 0 min 39 sec, loss:[total:-10.583567, consistency:0.897843, entropy:2.296282]
+2022-08-21 06:19:24,889--epoch:[7], batch:[273/390], time used: 0 min 46 sec, loss:[total:-10.617498, consistency:0.881838, entropy:2.299867]
+2022-08-21 06:19:31,318--epoch:[7], batch:[312/390], time used: 0 min 52 sec, loss:[total:-10.490650, consistency:0.978527, entropy:2.293835]
+2022-08-21 06:19:37,848--epoch:[7], batch:[351/390], time used: 0 min 59 sec, loss:[total:-10.408302, consistency:1.043066, entropy:2.290274]
+2022-08-21 06:19:44,241--epoch:[7], avg loss: total:-10.574326, consistency:0.898823, entropy:2.294630, time to run this epoch: 1 min 5 sec
+2022-08-21 06:19:44,243--Checkpoint ...
+2022-08-21 06:19:44,647--Train ...
+2022-08-21 06:19:45,123--epoch:[8], batch:[0/390], time used: 0 min 0 sec, loss:[total:-10.698944, consistency:0.783762, entropy:2.296541]
+2022-08-21 06:19:51,547--epoch:[8], batch:[39/390], time used: 0 min 6 sec, loss:[total:-10.477465, consistency:1.004013, entropy:2.296296]
+2022-08-21 06:19:58,427--epoch:[8], batch:[78/390], time used: 0 min 13 sec, loss:[total:-10.645214, consistency:0.829590, entropy:2.294961]
+2022-08-21 06:20:04,875--epoch:[8], batch:[117/390], time used: 0 min 20 sec, loss:[total:-10.559691, consistency:0.927436, entropy:2.297426]
+2022-08-21 06:20:11,314--epoch:[8], batch:[156/390], time used: 0 min 26 sec, loss:[total:-10.518350, consistency:0.963507, entropy:2.296371]
+2022-08-21 06:20:19,431--epoch:[8], batch:[195/390], time used: 0 min 34 sec, loss:[total:-10.649315, consistency:0.812304, entropy:2.292324]
+2022-08-21 06:20:25,788--epoch:[8], batch:[234/390], time used: 0 min 41 sec, loss:[total:-10.532256, consistency:0.919929, entropy:2.290437]
+2022-08-21 06:20:32,176--epoch:[8], batch:[273/390], time used: 0 min 47 sec, loss:[total:-10.488998, consistency:0.943607, entropy:2.286521]
+2022-08-21 06:20:38,707--epoch:[8], batch:[312/390], time used: 0 min 54 sec, loss:[total:-10.729903, consistency:0.739080, entropy:2.293797]
+2022-08-21 06:20:45,263--epoch:[8], batch:[351/390], time used: 1 min 0 sec, loss:[total:-10.603183, consistency:0.841498, entropy:2.288936]
+2022-08-21 06:20:51,432--epoch:[8], avg loss: total:-10.579277, consistency:0.892112, entropy:2.294278, time to run this epoch: 1 min 6 sec
+2022-08-21 06:20:51,433--Checkpoint ...
+2022-08-21 06:20:51,861--Train ...
+2022-08-21 06:20:52,347--epoch:[9], batch:[0/390], time used: 0 min 0 sec, loss:[total:-10.500200, consistency:0.962969, entropy:2.292634]
+2022-08-21 06:20:58,966--epoch:[9], batch:[39/390], time used: 0 min 7 sec, loss:[total:-10.622683, consistency:0.853937, entropy:2.295324]
+2022-08-21 06:21:05,809--epoch:[9], batch:[78/390], time used: 0 min 13 sec, loss:[total:-10.646515, consistency:0.850741, entropy:2.299451]
+2022-08-21 06:21:12,231--epoch:[9], batch:[117/390], time used: 0 min 20 sec, loss:[total:-10.636924, consistency:0.864330, entropy:2.300251]
+2022-08-21 06:21:18,639--epoch:[9], batch:[156/390], time used: 0 min 26 sec, loss:[total:-10.656435, consistency:0.818321, entropy:2.294951]
+2022-08-21 06:21:25,076--epoch:[9], batch:[195/390], time used: 0 min 33 sec, loss:[total:-10.535006, consistency:0.900657, entropy:2.287133]
+2022-08-21 06:21:31,582--epoch:[9], batch:[234/390], time used: 0 min 39 sec, loss:[total:-10.638162, consistency:0.826318, entropy:2.292896]
+2022-08-21 06:21:37,847--epoch:[9], batch:[273/390], time used: 0 min 45 sec, loss:[total:-10.540332, consistency:0.902061, entropy:2.288479]
+2022-08-21 06:21:44,460--epoch:[9], batch:[312/390], time used: 0 min 52 sec, loss:[total:-10.678560, consistency:0.814040, entropy:2.298520]
+2022-08-21 06:21:50,919--epoch:[9], batch:[351/390], time used: 0 min 59 sec, loss:[total:-10.692629, consistency:0.760248, entropy:2.290576]
+2022-08-21 06:21:57,153--epoch:[9], avg loss: total:-10.594571, consistency:0.878167, entropy:2.294548, time to run this epoch: 1 min 5 sec
+2022-08-21 06:21:57,154--Checkpoint ...
+2022-08-21 06:21:57,544--Train ...
+2022-08-21 06:21:58,045--epoch:[10], batch:[0/390], time used: 0 min 0 sec, loss:[total:-10.511363, consistency:0.973200, entropy:2.296913]
+2022-08-21 06:22:05,982--epoch:[10], batch:[39/390], time used: 0 min 8 sec, loss:[total:-10.552467, consistency:0.932990, entropy:2.297091]
+2022-08-21 06:22:12,841--epoch:[10], batch:[78/390], time used: 0 min 15 sec, loss:[total:-10.670259, consistency:0.785081, entropy:2.291068]
+2022-08-21 06:22:19,351--epoch:[10], batch:[117/390], time used: 0 min 21 sec, loss:[total:-10.615224, consistency:0.862314, entropy:2.295508]
+2022-08-21 06:22:25,873--epoch:[10], batch:[156/390], time used: 0 min 28 sec, loss:[total:-10.499434, consistency:0.962583, entropy:2.292403]
+2022-08-21 06:22:32,372--epoch:[10], batch:[195/390], time used: 0 min 34 sec, loss:[total:-10.538788, consistency:0.942479, entropy:2.296253]
+2022-08-21 06:22:38,710--epoch:[10], batch:[234/390], time used: 0 min 41 sec, loss:[total:-10.629863, consistency:0.860802, entropy:2.298133]
+2022-08-21 06:22:45,283--epoch:[10], batch:[273/390], time used: 0 min 47 sec, loss:[total:-10.658007, consistency:0.799177, entropy:2.291437]
+2022-08-21 06:22:51,697--epoch:[10], batch:[312/390], time used: 0 min 54 sec, loss:[total:-10.649249, consistency:0.836552, entropy:2.297160]
+2022-08-21 06:22:58,067--epoch:[10], batch:[351/390], time used: 1 min 0 sec, loss:[total:-10.668699, consistency:0.807143, entropy:2.295168]
+2022-08-21 06:23:04,280--epoch:[10], avg loss: total:-10.595585, consistency:0.875145, entropy:2.294146, time to run this epoch: 1 min 6 sec
+2022-08-21 06:23:04,281--Checkpoint ...
+2022-08-21 06:23:04,696--Train ...
+2022-08-21 06:23:05,195--epoch:[11], batch:[0/390], time used: 0 min 0 sec, loss:[total:-10.692997, consistency:0.802026, entropy:2.299005]
+2022-08-21 06:23:11,678--epoch:[11], batch:[39/390], time used: 0 min 6 sec, loss:[total:-10.521013, consistency:0.963299, entropy:2.296862]
+2022-08-21 06:23:18,651--epoch:[11], batch:[78/390], time used: 0 min 13 sec, loss:[total:-10.442719, consistency:1.030042, entropy:2.294552]
+2022-08-21 06:23:24,906--epoch:[11], batch:[117/390], time used: 0 min 20 sec, loss:[total:-10.628847, consistency:0.819837, entropy:2.289737]
+2022-08-21 06:23:31,327--epoch:[11], batch:[156/390], time used: 0 min 26 sec, loss:[total:-10.589521, consistency:0.900704, entropy:2.298045]
+2022-08-21 06:23:37,951--epoch:[11], batch:[195/390], time used: 0 min 33 sec, loss:[total:-10.537407, consistency:0.864175, entropy:2.280316]
+2022-08-21 06:23:44,523--epoch:[11], batch:[234/390], time used: 0 min 39 sec, loss:[total:-10.672578, consistency:0.801423, entropy:2.294800]
+2022-08-21 06:23:51,123--epoch:[11], batch:[273/390], time used: 0 min 46 sec, loss:[total:-10.548604, consistency:0.938296, entropy:2.297380]
+2022-08-21 06:23:58,881--epoch:[11], batch:[312/390], time used: 0 min 54 sec, loss:[total:-10.645402, consistency:0.858369, entropy:2.300754]
+2022-08-21 06:24:05,319--epoch:[11], batch:[351/390], time used: 1 min 0 sec, loss:[total:-10.589067, consistency:0.865096, entropy:2.290833]
+2022-08-21 06:24:11,647--epoch:[11], avg loss: total:-10.597393, consistency:0.872610, entropy:2.294000, time to run this epoch: 1 min 6 sec
+2022-08-21 06:24:11,648--Checkpoint ...
+2022-08-21 06:24:12,049--Train ...
+2022-08-21 06:24:12,514--epoch:[12], batch:[0/390], time used: 0 min 0 sec, loss:[total:-10.682849, consistency:0.780358, entropy:2.292641]
+2022-08-21 06:24:19,144--epoch:[12], batch:[39/390], time used: 0 min 7 sec, loss:[total:-10.715938, consistency:0.759827, entropy:2.295153]
+2022-08-21 06:24:25,674--epoch:[12], batch:[78/390], time used: 0 min 13 sec, loss:[total:-10.613571, consistency:0.848675, entropy:2.292449]
+2022-08-21 06:24:32,201--epoch:[12], batch:[117/390], time used: 0 min 20 sec, loss:[total:-10.444056, consistency:1.041053, entropy:2.297022]
+2022-08-21 06:24:38,544--epoch:[12], batch:[156/390], time used: 0 min 26 sec, loss:[total:-10.444430, consistency:1.032342, entropy:2.295354]
+2022-08-21 06:24:45,014--epoch:[12], batch:[195/390], time used: 0 min 32 sec, loss:[total:-10.462828, consistency:0.974095, entropy:2.287385]
+2022-08-21 06:24:51,444--epoch:[12], batch:[234/390], time used: 0 min 39 sec, loss:[total:-10.694945, consistency:0.799820, entropy:2.298953]
+2022-08-21 06:24:57,844--epoch:[12], batch:[273/390], time used: 0 min 45 sec, loss:[total:-10.725843, consistency:0.768210, entropy:2.298810]
+2022-08-21 06:25:04,578--epoch:[12], batch:[312/390], time used: 0 min 52 sec, loss:[total:-10.614393, consistency:0.810831, entropy:2.285045]
+2022-08-21 06:25:10,955--epoch:[12], batch:[351/390], time used: 0 min 58 sec, loss:[total:-10.680849, consistency:0.785314, entropy:2.293233]
+2022-08-21 06:25:17,350--epoch:[12], avg loss: total:-10.615457, consistency:0.857302, entropy:2.294552, time to run this epoch: 1 min 5 sec
+2022-08-21 06:25:17,351--Checkpoint ...
+2022-08-21 06:25:17,755--Train ...
+2022-08-21 06:25:18,218--epoch:[13], batch:[0/390], time used: 0 min 0 sec, loss:[total:-10.701330, consistency:0.769752, entropy:2.294217]
+2022-08-21 06:25:24,615--epoch:[13], batch:[39/390], time used: 0 min 6 sec, loss:[total:-10.677601, consistency:0.802824, entropy:2.296085]
+2022-08-21 06:25:31,350--epoch:[13], batch:[78/390], time used: 0 min 13 sec, loss:[total:-10.633514, consistency:0.839533, entropy:2.294610]
+2022-08-21 06:25:37,748--epoch:[13], batch:[117/390], time used: 0 min 19 sec, loss:[total:-10.638543, consistency:0.819234, entropy:2.291555]
+2022-08-21 06:25:45,469--epoch:[13], batch:[156/390], time used: 0 min 27 sec, loss:[total:-10.459042, consistency:1.026022, entropy:2.297013]
+2022-08-21 06:25:52,213--epoch:[13], batch:[195/390], time used: 0 min 34 sec, loss:[total:-10.650333, consistency:0.809267, entropy:2.291920]
+2022-08-21 06:25:58,496--epoch:[13], batch:[234/390], time used: 0 min 40 sec, loss:[total:-10.640858, consistency:0.848020, entropy:2.297776]
+2022-08-21 06:26:04,998--epoch:[13], batch:[273/390], time used: 0 min 47 sec, loss:[total:-10.587675, consistency:0.885264, entropy:2.294588]
+2022-08-21 06:26:11,443--epoch:[13], batch:[312/390], time used: 0 min 53 sec, loss:[total:-10.710061, consistency:0.792817, entropy:2.300576]
+2022-08-21 06:26:17,921--epoch:[13], batch:[351/390], time used: 1 min 0 sec, loss:[total:-10.624269, consistency:0.842071, entropy:2.293268]
+2022-08-21 06:26:24,309--epoch:[13], avg loss: total:-10.620073, consistency:0.850561, entropy:2.294127, time to run this epoch: 1 min 6 sec
+2022-08-21 06:26:24,310--Checkpoint ...
+2022-08-21 06:26:24,712--Train ...
+2022-08-21 06:26:25,190--epoch:[14], batch:[0/390], time used: 0 min 0 sec, loss:[total:-10.756366, consistency:0.743571, entropy:2.299987]
+2022-08-21 06:26:31,587--epoch:[14], batch:[39/390], time used: 0 min 6 sec, loss:[total:-10.483914, consistency:0.990849, entropy:2.294953]
+2022-08-21 06:26:38,384--epoch:[14], batch:[78/390], time used: 0 min 13 sec, loss:[total:-10.605556, consistency:0.895592, entropy:2.300230]
+2022-08-21 06:26:44,952--epoch:[14], batch:[117/390], time used: 0 min 20 sec, loss:[total:-10.712850, consistency:0.735885, entropy:2.289747]
+2022-08-21 06:26:51,266--epoch:[14], batch:[156/390], time used: 0 min 26 sec, loss:[total:-10.664419, consistency:0.770719, entropy:2.287028]
+2022-08-21 06:26:57,687--epoch:[14], batch:[195/390], time used: 0 min 32 sec, loss:[total:-10.649082, consistency:0.837800, entropy:2.297376]
+2022-08-21 06:27:04,159--epoch:[14], batch:[234/390], time used: 0 min 39 sec, loss:[total:-10.618584, consistency:0.852959, entropy:2.294309]
+2022-08-21 06:27:10,540--epoch:[14], batch:[273/390], time used: 0 min 45 sec, loss:[total:-10.613477, consistency:0.878232, entropy:2.298342]
+2022-08-21 06:27:16,917--epoch:[14], batch:[312/390], time used: 0 min 52 sec, loss:[total:-10.648319, consistency:0.855446, entropy:2.300753]
+2022-08-21 06:27:23,439--epoch:[14], batch:[351/390], time used: 0 min 58 sec, loss:[total:-10.701632, consistency:0.777014, entropy:2.295729]
+2022-08-21 06:27:29,654--epoch:[14], avg loss: total:-10.628757, consistency:0.843154, entropy:2.294382, time to run this epoch: 1 min 4 sec
+2022-08-21 06:27:29,655--Checkpoint ...
+2022-08-21 06:27:30,055--Train ...
+2022-08-21 06:27:30,579--epoch:[15], batch:[0/390], time used: 0 min 0 sec, loss:[total:-10.679849, consistency:0.802171, entropy:2.296404]
+2022-08-21 06:27:38,904--epoch:[15], batch:[39/390], time used: 0 min 8 sec, loss:[total:-10.711029, consistency:0.775686, entropy:2.297343]
+2022-08-21 06:27:45,535--epoch:[15], batch:[78/390], time used: 0 min 15 sec, loss:[total:-10.619287, consistency:0.862093, entropy:2.296276]
+2022-08-21 06:27:52,070--epoch:[15], batch:[117/390], time used: 0 min 22 sec, loss:[total:-10.646355, consistency:0.843513, entropy:2.297973]
+2022-08-21 06:27:58,414--epoch:[15], batch:[156/390], time used: 0 min 28 sec, loss:[total:-10.749772, consistency:0.741747, entropy:2.298304]
+2022-08-21 06:28:04,877--epoch:[15], batch:[195/390], time used: 0 min 34 sec, loss:[total:-10.617150, consistency:0.821915, entropy:2.287813]
+2022-08-21 06:28:11,291--epoch:[15], batch:[234/390], time used: 0 min 41 sec, loss:[total:-10.600258, consistency:0.883068, entropy:2.296665]
+2022-08-21 06:28:17,680--epoch:[15], batch:[273/390], time used: 0 min 47 sec, loss:[total:-10.692133, consistency:0.802721, entropy:2.298971]
+2022-08-21 06:28:24,061--epoch:[15], batch:[312/390], time used: 0 min 54 sec, loss:[total:-10.668704, consistency:0.788648, entropy:2.291470]
+2022-08-21 06:28:30,571--epoch:[15], batch:[351/390], time used: 1 min 0 sec, loss:[total:-10.532948, consistency:0.964751, entropy:2.299540]
+2022-08-21 06:28:36,783--epoch:[15], avg loss: total:-10.632241, consistency:0.839096, entropy:2.294268, time to run this epoch: 1 min 6 sec
+2022-08-21 06:28:36,784--Checkpoint ...
+2022-08-21 06:28:37,180--Train ...
+2022-08-21 06:28:37,662--epoch:[16], batch:[0/390], time used: 0 min 0 sec, loss:[total:-10.488058, consistency:1.005226, entropy:2.298657]
+2022-08-21 06:28:44,336--epoch:[16], batch:[39/390], time used: 0 min 7 sec, loss:[total:-10.600683, consistency:0.859636, entropy:2.292064]
+2022-08-21 06:28:50,898--epoch:[16], batch:[78/390], time used: 0 min 13 sec, loss:[total:-10.707655, consistency:0.744623, entropy:2.290456]
+2022-08-21 06:28:57,324--epoch:[16], batch:[117/390], time used: 0 min 20 sec, loss:[total:-10.777716, consistency:0.678554, entropy:2.291254]
+2022-08-21 06:29:03,702--epoch:[16], batch:[156/390], time used: 0 min 26 sec, loss:[total:-10.580981, consistency:0.899173, entropy:2.296031]
+2022-08-21 06:29:10,233--epoch:[16], batch:[195/390], time used: 0 min 33 sec, loss:[total:-10.702796, consistency:0.775485, entropy:2.295656]
+2022-08-21 06:29:16,580--epoch:[16], batch:[234/390], time used: 0 min 39 sec, loss:[total:-10.614923, consistency:0.847480, entropy:2.292481]
+2022-08-21 06:29:23,071--epoch:[16], batch:[273/390], time used: 0 min 45 sec, loss:[total:-10.700400, consistency:0.770761, entropy:2.294232]
+2022-08-21 06:29:31,115--epoch:[16], batch:[312/390], time used: 0 min 53 sec, loss:[total:-10.671758, consistency:0.833813, entropy:2.301114]
+2022-08-21 06:29:37,625--epoch:[16], batch:[351/390], time used: 1 min 0 sec, loss:[total:-10.545354, consistency:0.910005, entropy:2.291072]
+2022-08-21 06:29:43,810--epoch:[16], avg loss: total:-10.633526, consistency:0.839394, entropy:2.294584, time to run this epoch: 1 min 6 sec
+2022-08-21 06:29:43,811--Checkpoint ...
+2022-08-21 06:29:44,218--Train ...
+2022-08-21 06:29:44,703--epoch:[17], batch:[0/390], time used: 0 min 0 sec, loss:[total:-10.503957, consistency:0.996276, entropy:2.300046]
+2022-08-21 06:29:51,185--epoch:[17], batch:[39/390], time used: 0 min 6 sec, loss:[total:-10.668927, consistency:0.812805, entropy:2.296346]
+2022-08-21 06:29:58,198--epoch:[17], batch:[78/390], time used: 0 min 13 sec, loss:[total:-10.864013, consistency:0.616498, entropy:2.296102]
+2022-08-21 06:30:04,573--epoch:[17], batch:[117/390], time used: 0 min 20 sec, loss:[total:-10.674278, consistency:0.802812, entropy:2.295418]
+2022-08-21 06:30:11,050--epoch:[17], batch:[156/390], time used: 0 min 26 sec, loss:[total:-10.649278, consistency:0.851280, entropy:2.300111]
+2022-08-21 06:30:17,449--epoch:[17], batch:[195/390], time used: 0 min 33 sec, loss:[total:-10.439953, consistency:1.046570, entropy:2.297305]
+2022-08-21 06:30:23,893--epoch:[17], batch:[234/390], time used: 0 min 39 sec, loss:[total:-10.597772, consistency:0.871735, entropy:2.293901]
+2022-08-21 06:30:30,475--epoch:[17], batch:[273/390], time used: 0 min 46 sec, loss:[total:-10.731679, consistency:0.762452, entropy:2.298826]
+2022-08-21 06:30:36,944--epoch:[17], batch:[312/390], time used: 0 min 52 sec, loss:[total:-10.804344, consistency:0.676637, entropy:2.296196]
+2022-08-21 06:30:43,334--epoch:[17], batch:[351/390], time used: 0 min 59 sec, loss:[total:-10.746691, consistency:0.755125, entropy:2.300363]
+2022-08-21 06:30:49,596--epoch:[17], avg loss: total:-10.636389, consistency:0.834146, entropy:2.294107, time to run this epoch: 1 min 5 sec
+2022-08-21 06:30:49,597--Checkpoint ...
+2022-08-21 06:30:50,001--Train ...
+2022-08-21 06:30:50,480--epoch:[18], batch:[0/390], time used: 0 min 0 sec, loss:[total:-10.666467, consistency:0.761894, entropy:2.285672]
+2022-08-21 06:30:56,995--epoch:[18], batch:[39/390], time used: 0 min 6 sec, loss:[total:-10.711827, consistency:0.757297, entropy:2.293825]
+2022-08-21 06:31:03,740--epoch:[18], batch:[78/390], time used: 0 min 13 sec, loss:[total:-10.488198, consistency:0.985866, entropy:2.294813]
+2022-08-21 06:31:10,258--epoch:[18], batch:[117/390], time used: 0 min 20 sec, loss:[total:-10.571050, consistency:0.906755, entropy:2.295561]
+2022-08-21 06:31:18,313--epoch:[18], batch:[156/390], time used: 0 min 28 sec, loss:[total:-10.637433, consistency:0.858718, entropy:2.299230]
+2022-08-21 06:31:24,755--epoch:[18], batch:[195/390], time used: 0 min 34 sec, loss:[total:-10.576330, consistency:0.897111, entropy:2.294688]
+2022-08-21 06:31:31,242--epoch:[18], batch:[234/390], time used: 0 min 41 sec, loss:[total:-10.579563, consistency:0.889210, entropy:2.293755]
+2022-08-21 06:31:37,785--epoch:[18], batch:[273/390], time used: 0 min 47 sec, loss:[total:-10.614279, consistency:0.859147, entropy:2.294685]
+2022-08-21 06:31:44,331--epoch:[18], batch:[312/390], time used: 0 min 54 sec, loss:[total:-10.632608, consistency:0.832329, entropy:2.292988]
+2022-08-21 06:31:51,002--epoch:[18], batch:[351/390], time used: 1 min 0 sec, loss:[total:-10.605745, consistency:0.830375, entropy:2.287224]
+2022-08-21 06:31:57,264--epoch:[18], avg loss: total:-10.642409, consistency:0.830619, entropy:2.294606, time to run this epoch: 1 min 7 sec
+2022-08-21 06:31:57,265--Checkpoint ...
+2022-08-21 06:31:57,683--Train ...
+2022-08-21 06:31:58,144--epoch:[19], batch:[0/390], time used: 0 min 0 sec, loss:[total:-10.617872, consistency:0.863097, entropy:2.296194]
+2022-08-21 06:32:04,678--epoch:[19], batch:[39/390], time used: 0 min 6 sec, loss:[total:-10.822330, consistency:0.640967, entropy:2.292659]
+2022-08-21 06:32:11,400--epoch:[19], batch:[78/390], time used: 0 min 13 sec, loss:[total:-10.589851, consistency:0.879951, entropy:2.293960]
+2022-08-21 06:32:17,970--epoch:[19], batch:[117/390], time used: 0 min 20 sec, loss:[total:-10.700772, consistency:0.774675, entropy:2.295089]
+2022-08-21 06:32:24,409--epoch:[19], batch:[156/390], time used: 0 min 26 sec, loss:[total:-10.668823, consistency:0.817945, entropy:2.297354]
+2022-08-21 06:32:31,060--epoch:[19], batch:[195/390], time used: 0 min 33 sec, loss:[total:-10.613306, consistency:0.862013, entropy:2.295064]
+2022-08-21 06:32:37,560--epoch:[19], batch:[234/390], time used: 0 min 39 sec, loss:[total:-10.563603, consistency:0.894875, entropy:2.291696]
+2022-08-21 06:32:44,016--epoch:[19], batch:[273/390], time used: 0 min 46 sec, loss:[total:-10.596028, consistency:0.877063, entropy:2.294618]
+2022-08-21 06:32:50,638--epoch:[19], batch:[312/390], time used: 0 min 52 sec, loss:[total:-10.606940, consistency:0.877821, entropy:2.296952]
+2022-08-21 06:32:57,240--epoch:[19], batch:[351/390], time used: 0 min 59 sec, loss:[total:-10.777081, consistency:0.705891, entropy:2.296594]
+2022-08-21 06:33:03,488--epoch:[19], avg loss: total:-10.648564, consistency:0.823326, entropy:2.294378, time to run this epoch: 1 min 5 sec
+2022-08-21 06:33:03,488--Checkpoint ...
+2022-08-21 06:33:03,892--Train ...
+2022-08-21 06:33:04,382--epoch:[20], batch:[0/390], time used: 0 min 0 sec, loss:[total:-10.566117, consistency:0.867216, entropy:2.286667]
+2022-08-21 06:33:12,385--epoch:[20], batch:[39/390], time used: 0 min 8 sec, loss:[total:-10.616384, consistency:0.874647, entropy:2.298206]
+2022-08-21 06:33:19,284--epoch:[20], batch:[78/390], time used: 0 min 15 sec, loss:[total:-10.746309, consistency:0.733995, entropy:2.296061]
+2022-08-21 06:33:25,826--epoch:[20], batch:[117/390], time used: 0 min 21 sec, loss:[total:-10.644073, consistency:0.830817, entropy:2.294978]
+2022-08-21 06:33:32,207--epoch:[20], batch:[156/390], time used: 0 min 28 sec, loss:[total:-10.613636, consistency:0.854772, entropy:2.293682]
+2022-08-21 06:33:38,699--epoch:[20], batch:[195/390], time used: 0 min 34 sec, loss:[total:-10.553348, consistency:0.917872, entropy:2.294244]
+2022-08-21 06:33:45,266--epoch:[20], batch:[234/390], time used: 0 min 41 sec, loss:[total:-10.537936, consistency:0.931218, entropy:2.293831]
+2022-08-21 06:33:51,625--epoch:[20], batch:[273/390], time used: 0 min 47 sec, loss:[total:-10.619678, consistency:0.870364, entropy:2.298008]
+2022-08-21 06:33:58,092--epoch:[20], batch:[312/390], time used: 0 min 54 sec, loss:[total:-10.631283, consistency:0.850475, entropy:2.296352]
+2022-08-21 06:34:04,691--epoch:[20], batch:[351/390], time used: 1 min 0 sec, loss:[total:-10.550389, consistency:0.935080, entropy:2.297094]
+2022-08-21 06:34:10,913--epoch:[20], avg loss: total:-10.650276, consistency:0.822921, entropy:2.294639, time to run this epoch: 1 min 7 sec
+2022-08-21 06:34:10,914--Checkpoint ...
+2022-08-21 06:34:11,744--Train ...
+2022-08-21 06:34:12,232--epoch:[21], batch:[0/390], time used: 0 min 0 sec, loss:[total:-10.668676, consistency:0.816669, entropy:2.297069]
+2022-08-21 06:34:18,927--epoch:[21], batch:[39/390], time used: 0 min 7 sec, loss:[total:-10.665974, consistency:0.796922, entropy:2.292579]
+2022-08-21 06:34:25,873--epoch:[21], batch:[78/390], time used: 0 min 14 sec, loss:[total:-10.584066, consistency:0.854085, entropy:2.287630]
+2022-08-21 06:34:32,370--epoch:[21], batch:[117/390], time used: 0 min 20 sec, loss:[total:-10.707717, consistency:0.786585, entropy:2.298861]
+2022-08-21 06:34:38,788--epoch:[21], batch:[156/390], time used: 0 min 27 sec, loss:[total:-10.578870, consistency:0.919812, entropy:2.299736]
+2022-08-21 06:34:45,214--epoch:[21], batch:[195/390], time used: 0 min 33 sec, loss:[total:-10.806308, consistency:0.678346, entropy:2.296931]
+2022-08-21 06:34:51,832--epoch:[21], batch:[234/390], time used: 0 min 40 sec, loss:[total:-10.609259, consistency:0.845574, entropy:2.290967]
+2022-08-21 06:34:58,960--epoch:[21], batch:[273/390], time used: 0 min 47 sec, loss:[total:-10.439660, consistency:1.023450, entropy:2.292622]
+2022-08-21 06:35:06,265--epoch:[21], batch:[312/390], time used: 0 min 54 sec, loss:[total:-10.743134, consistency:0.692644, entropy:2.287156]
+2022-08-21 06:35:12,792--epoch:[21], batch:[351/390], time used: 1 min 1 sec, loss:[total:-10.603233, consistency:0.873450, entropy:2.295336]
+2022-08-21 06:35:18,973--epoch:[21], avg loss: total:-10.652576, consistency:0.818123, entropy:2.294140, time to run this epoch: 1 min 7 sec
+2022-08-21 06:35:18,974--Checkpoint ...
+2022-08-21 06:35:19,367--Train ...
+2022-08-21 06:35:19,831--epoch:[22], batch:[0/390], time used: 0 min 0 sec, loss:[total:-10.650374, consistency:0.832265, entropy:2.296528]
+2022-08-21 06:35:26,336--epoch:[22], batch:[39/390], time used: 0 min 6 sec, loss:[total:-10.670754, consistency:0.808538, entropy:2.295859]
+2022-08-21 06:35:32,954--epoch:[22], batch:[78/390], time used: 0 min 13 sec, loss:[total:-10.516659, consistency:0.944600, entropy:2.292252]
+2022-08-21 06:35:39,668--epoch:[22], batch:[117/390], time used: 0 min 20 sec, loss:[total:-10.626257, consistency:0.810877, entropy:2.287427]
+2022-08-21 06:35:46,147--epoch:[22], batch:[156/390], time used: 0 min 26 sec, loss:[total:-10.698443, consistency:0.727355, entropy:2.285160]
+2022-08-21 06:35:52,601--epoch:[22], batch:[195/390], time used: 0 min 33 sec, loss:[total:-10.586136, consistency:0.894220, entropy:2.296071]
+2022-08-21 06:35:59,051--epoch:[22], batch:[234/390], time used: 0 min 39 sec, loss:[total:-10.682729, consistency:0.744330, entropy:2.285412]
+2022-08-21 06:36:05,521--epoch:[22], batch:[273/390], time used: 0 min 46 sec, loss:[total:-10.566502, consistency:0.883039, entropy:2.289908]
+2022-08-21 06:36:12,004--epoch:[22], batch:[312/390], time used: 0 min 52 sec, loss:[total:-10.610306, consistency:0.863033, entropy:2.294668]
+2022-08-21 06:36:18,465--epoch:[22], batch:[351/390], time used: 0 min 59 sec, loss:[total:-10.441343, consistency:1.042049, entropy:2.296679]
+2022-08-21 06:36:24,706--epoch:[22], avg loss: total:-10.659081, consistency:0.812914, entropy:2.294399, time to run this epoch: 1 min 5 sec
+2022-08-21 06:36:24,707--Checkpoint ...
+2022-08-21 06:36:25,564--Train ...
+2022-08-21 06:36:26,015--epoch:[23], batch:[0/390], time used: 0 min 0 sec, loss:[total:-10.677069, consistency:0.793316, entropy:2.294077]
+2022-08-21 06:36:32,431--epoch:[23], batch:[39/390], time used: 0 min 6 sec, loss:[total:-10.777700, consistency:0.716957, entropy:2.298932]
+2022-08-21 06:36:39,259--epoch:[23], batch:[78/390], time used: 0 min 13 sec, loss:[total:-10.549819, consistency:0.948585, entropy:2.299681]
+2022-08-21 06:36:45,796--epoch:[23], batch:[117/390], time used: 0 min 20 sec, loss:[total:-10.818044, consistency:0.660022, entropy:2.295613]
+2022-08-21 06:36:53,483--epoch:[23], batch:[156/390], time used: 0 min 27 sec, loss:[total:-10.733116, consistency:0.734575, entropy:2.293538]
+2022-08-21 06:36:59,942--epoch:[23], batch:[195/390], time used: 0 min 34 sec, loss:[total:-10.679085, consistency:0.785580, entropy:2.292933]
+2022-08-21 06:37:06,337--epoch:[23], batch:[234/390], time used: 0 min 40 sec, loss:[total:-10.699336, consistency:0.735438, entropy:2.286955]
+2022-08-21 06:37:12,770--epoch:[23], batch:[273/390], time used: 0 min 47 sec, loss:[total:-10.552104, consistency:0.917439, entropy:2.293909]
+2022-08-21 06:37:19,287--epoch:[23], batch:[312/390], time used: 0 min 53 sec, loss:[total:-10.659178, consistency:0.783313, entropy:2.288498]
+2022-08-21 06:37:25,689--epoch:[23], batch:[351/390], time used: 1 min 0 sec, loss:[total:-10.697737, consistency:0.736457, entropy:2.286839]
+2022-08-21 06:37:31,930--epoch:[23], avg loss: total:-10.654727, consistency:0.816635, entropy:2.294272, time to run this epoch: 1 min 6 sec
+2022-08-21 06:37:31,931--Checkpoint ...
+2022-08-21 06:37:32,307--Train ...
+2022-08-21 06:37:32,822--epoch:[24], batch:[0/390], time used: 0 min 0 sec, loss:[total:-10.634557, consistency:0.853894, entropy:2.297690]
+2022-08-21 06:37:39,446--epoch:[24], batch:[39/390], time used: 0 min 7 sec, loss:[total:-10.595824, consistency:0.871360, entropy:2.293437]
+2022-08-21 06:37:46,077--epoch:[24], batch:[78/390], time used: 0 min 13 sec, loss:[total:-10.706737, consistency:0.723546, entropy:2.286057]
+2022-08-21 06:37:52,594--epoch:[24], batch:[117/390], time used: 0 min 20 sec, loss:[total:-10.675667, consistency:0.787517, entropy:2.292637]
+2022-08-21 06:37:59,029--epoch:[24], batch:[156/390], time used: 0 min 26 sec, loss:[total:-10.737896, consistency:0.761384, entropy:2.299856]
+2022-08-21 06:38:05,436--epoch:[24], batch:[195/390], time used: 0 min 33 sec, loss:[total:-10.656173, consistency:0.822298, entropy:2.295694]
+2022-08-21 06:38:11,891--epoch:[24], batch:[234/390], time used: 0 min 39 sec, loss:[total:-10.698422, consistency:0.765367, entropy:2.292758]
+2022-08-21 06:38:18,366--epoch:[24], batch:[273/390], time used: 0 min 46 sec, loss:[total:-10.776260, consistency:0.708702, entropy:2.296993]
+2022-08-21 06:38:24,732--epoch:[24], batch:[312/390], time used: 0 min 52 sec, loss:[total:-10.785137, consistency:0.693994, entropy:2.295826]
+2022-08-21 06:38:31,247--epoch:[24], batch:[351/390], time used: 0 min 58 sec, loss:[total:-10.723176, consistency:0.778653, entropy:2.300366]
+2022-08-21 06:38:37,385--epoch:[24], avg loss: total:-10.663843, consistency:0.807800, entropy:2.294329, time to run this epoch: 1 min 5 sec
+2022-08-21 06:38:37,385--Checkpoint ...
+2022-08-21 06:38:37,792--Train ...
+2022-08-21 06:38:38,248--epoch:[25], batch:[0/390], time used: 0 min 0 sec, loss:[total:-10.738485, consistency:0.732663, entropy:2.294230]
+2022-08-21 06:38:45,737--epoch:[25], batch:[39/390], time used: 0 min 7 sec, loss:[total:-10.582258, consistency:0.917074, entropy:2.299866]
+2022-08-21 06:38:52,569--epoch:[25], batch:[78/390], time used: 0 min 14 sec, loss:[total:-10.405875, consistency:1.038694, entropy:2.288914]
+2022-08-21 06:38:58,960--epoch:[25], batch:[117/390], time used: 0 min 21 sec, loss:[total:-10.775782, consistency:0.685701, entropy:2.292297]
+2022-08-21 06:39:05,411--epoch:[25], batch:[156/390], time used: 0 min 27 sec, loss:[total:-10.634610, consistency:0.841737, entropy:2.295269]
+2022-08-21 06:39:11,868--epoch:[25], batch:[195/390], time used: 0 min 34 sec, loss:[total:-10.755701, consistency:0.731833, entropy:2.297507]
+2022-08-21 06:39:18,304--epoch:[25], batch:[234/390], time used: 0 min 40 sec, loss:[total:-10.579855, consistency:0.888518, entropy:2.293674]
+2022-08-21 06:39:24,753--epoch:[25], batch:[273/390], time used: 0 min 46 sec, loss:[total:-10.673789, consistency:0.777811, entropy:2.290320]
+2022-08-21 06:39:31,216--epoch:[25], batch:[312/390], time used: 0 min 53 sec, loss:[total:-10.687273, consistency:0.799472, entropy:2.297349]
+2022-08-21 06:39:37,481--epoch:[25], batch:[351/390], time used: 0 min 59 sec, loss:[total:-10.728671, consistency:0.774047, entropy:2.300544]
+2022-08-21 06:39:43,793--epoch:[25], avg loss: total:-10.664753, consistency:0.808509, entropy:2.294652, time to run this epoch: 1 min 6 sec
+2022-08-21 06:39:43,794--Checkpoint ...
+2022-08-21 06:39:44,181--Train ...
+2022-08-21 06:39:44,654--epoch:[26], batch:[0/390], time used: 0 min 0 sec, loss:[total:-10.573194, consistency:0.864355, entropy:2.287510]
+2022-08-21 06:39:51,136--epoch:[26], batch:[39/390], time used: 0 min 6 sec, loss:[total:-10.765601, consistency:0.728711, entropy:2.298862]
+2022-08-21 06:39:57,922--epoch:[26], batch:[78/390], time used: 0 min 13 sec, loss:[total:-10.764570, consistency:0.726757, entropy:2.298265]
+2022-08-21 06:40:04,422--epoch:[26], batch:[117/390], time used: 0 min 20 sec, loss:[total:-10.780079, consistency:0.693607, entropy:2.294737]
+2022-08-21 06:40:10,769--epoch:[26], batch:[156/390], time used: 0 min 26 sec, loss:[total:-10.620605, consistency:0.849047, entropy:2.293930]
+2022-08-21 06:40:17,388--epoch:[26], batch:[195/390], time used: 0 min 33 sec, loss:[total:-10.655947, consistency:0.840779, entropy:2.299345]
+2022-08-21 06:40:23,769--epoch:[26], batch:[234/390], time used: 0 min 39 sec, loss:[total:-10.571208, consistency:0.931735, entropy:2.300589]
+2022-08-21 06:40:30,312--epoch:[26], batch:[273/390], time used: 0 min 46 sec, loss:[total:-10.689249, consistency:0.743375, entropy:2.286525]
+2022-08-21 06:40:37,807--epoch:[26], batch:[312/390], time used: 0 min 53 sec, loss:[total:-10.673993, consistency:0.801823, entropy:2.295163]
+2022-08-21 06:40:44,414--epoch:[26], batch:[351/390], time used: 1 min 0 sec, loss:[total:-10.626043, consistency:0.840481, entropy:2.293305]
+2022-08-21 06:40:50,651--epoch:[26], avg loss: total:-10.666816, consistency:0.804554, entropy:2.294274, time to run this epoch: 1 min 6 sec
+2022-08-21 06:40:50,652--Checkpoint ...
+2022-08-21 06:40:51,039--Train ...
+2022-08-21 06:40:51,520--epoch:[27], batch:[0/390], time used: 0 min 0 sec, loss:[total:-10.517838, consistency:0.955416, entropy:2.294651]
+2022-08-21 06:40:58,010--epoch:[27], batch:[39/390], time used: 0 min 6 sec, loss:[total:-10.702636, consistency:0.779878, entropy:2.296503]
+2022-08-21 06:41:04,868--epoch:[27], batch:[78/390], time used: 0 min 13 sec, loss:[total:-10.838036, consistency:0.652628, entropy:2.298133]
+2022-08-21 06:41:11,391--epoch:[27], batch:[117/390], time used: 0 min 20 sec, loss:[total:-10.626734, consistency:0.872555, entropy:2.299858]
+2022-08-21 06:41:17,874--epoch:[27], batch:[156/390], time used: 0 min 26 sec, loss:[total:-10.721304, consistency:0.708140, entropy:2.285889]
+2022-08-21 06:41:24,587--epoch:[27], batch:[195/390], time used: 0 min 33 sec, loss:[total:-10.687009, consistency:0.786954, entropy:2.294793]
+2022-08-21 06:41:30,874--epoch:[27], batch:[234/390], time used: 0 min 39 sec, loss:[total:-10.608370, consistency:0.868011, entropy:2.295276]
+2022-08-21 06:41:37,444--epoch:[27], batch:[273/390], time used: 0 min 46 sec, loss:[total:-10.672456, consistency:0.809908, entropy:2.296473]
+2022-08-21 06:41:43,815--epoch:[27], batch:[312/390], time used: 0 min 52 sec, loss:[total:-10.597878, consistency:0.867092, entropy:2.292994]
+2022-08-21 06:41:50,359--epoch:[27], batch:[351/390], time used: 0 min 59 sec, loss:[total:-10.776953, consistency:0.701696, entropy:2.295730]
+2022-08-21 06:41:56,527--epoch:[27], avg loss: total:-10.669949, consistency:0.801625, entropy:2.294315, time to run this epoch: 1 min 5 sec
+2022-08-21 06:41:56,528--Checkpoint ...
+2022-08-21 06:41:56,931--Train ...
+2022-08-21 06:41:57,390--epoch:[28], batch:[0/390], time used: 0 min 0 sec, loss:[total:-10.681447, consistency:0.769450, entropy:2.290179]
+2022-08-21 06:42:03,963--epoch:[28], batch:[39/390], time used: 0 min 7 sec, loss:[total:-10.591776, consistency:0.890296, entropy:2.296414]
+2022-08-21 06:42:10,625--epoch:[28], batch:[78/390], time used: 0 min 13 sec, loss:[total:-10.635923, consistency:0.857603, entropy:2.298705]
+2022-08-21 06:42:16,963--epoch:[28], batch:[117/390], time used: 0 min 20 sec, loss:[total:-10.861602, consistency:0.638164, entropy:2.299953]
+2022-08-21 06:42:23,570--epoch:[28], batch:[156/390], time used: 0 min 26 sec, loss:[total:-10.575429, consistency:0.900254, entropy:2.295136]
+2022-08-21 06:42:31,133--epoch:[28], batch:[195/390], time used: 0 min 34 sec, loss:[total:-10.569597, consistency:0.918635, entropy:2.297647]
+2022-08-21 06:42:37,649--epoch:[28], batch:[234/390], time used: 0 min 40 sec, loss:[total:-10.830863, consistency:0.616929, entropy:2.289558]
+2022-08-21 06:42:44,046--epoch:[28], batch:[273/390], time used: 0 min 47 sec, loss:[total:-10.637080, consistency:0.844472, entropy:2.296310]
+2022-08-21 06:42:50,612--epoch:[28], batch:[312/390], time used: 0 min 53 sec, loss:[total:-10.720575, consistency:0.749022, entropy:2.293920]
+2022-08-21 06:42:57,073--epoch:[28], batch:[351/390], time used: 1 min 0 sec, loss:[total:-10.635189, consistency:0.848274, entropy:2.296693]
+2022-08-21 06:43:03,336--epoch:[28], avg loss: total:-10.676185, consistency:0.796072, entropy:2.294451, time to run this epoch: 1 min 6 sec
+2022-08-21 06:43:03,337--Checkpoint ...
+2022-08-21 06:43:03,743--Train ...
+2022-08-21 06:43:04,213--epoch:[29], batch:[0/390], time used: 0 min 0 sec, loss:[total:-10.695052, consistency:0.752540, entropy:2.289518]
+2022-08-21 06:43:10,792--epoch:[29], batch:[39/390], time used: 0 min 7 sec, loss:[total:-10.579654, consistency:0.899112, entropy:2.295753]
+2022-08-21 06:43:17,507--epoch:[29], batch:[78/390], time used: 0 min 13 sec, loss:[total:-10.802469, consistency:0.674338, entropy:2.295362]
+2022-08-21 06:43:24,035--epoch:[29], batch:[117/390], time used: 0 min 20 sec, loss:[total:-10.648210, consistency:0.779851, entropy:2.285612]
+2022-08-21 06:43:30,626--epoch:[29], batch:[156/390], time used: 0 min 26 sec, loss:[total:-10.770860, consistency:0.727583, entropy:2.299689]
+2022-08-21 06:43:37,091--epoch:[29], batch:[195/390], time used: 0 min 33 sec, loss:[total:-10.742572, consistency:0.709176, entropy:2.290349]
+2022-08-21 06:43:43,571--epoch:[29], batch:[234/390], time used: 0 min 39 sec, loss:[total:-10.665792, consistency:0.811185, entropy:2.295395]
+2022-08-21 06:43:50,004--epoch:[29], batch:[273/390], time used: 0 min 46 sec, loss:[total:-10.810419, consistency:0.673347, entropy:2.296753]
+2022-08-21 06:43:56,543--epoch:[29], batch:[312/390], time used: 0 min 52 sec, loss:[total:-10.617179, consistency:0.815687, entropy:2.286573]
+2022-08-21 06:44:03,026--epoch:[29], batch:[351/390], time used: 0 min 59 sec, loss:[total:-10.805815, consistency:0.654314, entropy:2.292026]
+2022-08-21 06:44:09,174--epoch:[29], avg loss: total:-10.678848, consistency:0.794489, entropy:2.294667, time to run this epoch: 1 min 5 sec
+2022-08-21 06:44:09,175--Checkpoint ...
+2022-08-21 06:44:09,578--Train ...
+2022-08-21 06:44:10,056--epoch:[30], batch:[0/390], time used: 0 min 0 sec, loss:[total:-10.626974, consistency:0.851176, entropy:2.295630]
+2022-08-21 06:44:16,377--epoch:[30], batch:[39/390], time used: 0 min 6 sec, loss:[total:-10.523088, consistency:0.962805, entropy:2.297179]
+2022-08-21 06:44:24,336--epoch:[30], batch:[78/390], time used: 0 min 14 sec, loss:[total:-10.808078, consistency:0.670552, entropy:2.295726]
+2022-08-21 06:44:30,807--epoch:[30], batch:[117/390], time used: 0 min 21 sec, loss:[total:-10.779752, consistency:0.687039, entropy:2.293358]
+2022-08-21 06:44:37,099--epoch:[30], batch:[156/390], time used: 0 min 27 sec, loss:[total:-10.731775, consistency:0.768182, entropy:2.299991]
+2022-08-21 06:44:43,635--epoch:[30], batch:[195/390], time used: 0 min 34 sec, loss:[total:-10.808972, consistency:0.663024, entropy:2.294399]
+2022-08-21 06:44:50,133--epoch:[30], batch:[234/390], time used: 0 min 40 sec, loss:[total:-10.592175, consistency:0.892844, entropy:2.297004]
+2022-08-21 06:44:56,633--epoch:[30], batch:[273/390], time used: 0 min 47 sec, loss:[total:-10.657063, consistency:0.803328, entropy:2.292078]
+2022-08-21 06:45:03,271--epoch:[30], batch:[312/390], time used: 0 min 53 sec, loss:[total:-10.688396, consistency:0.803455, entropy:2.298370]
+2022-08-21 06:45:09,711--epoch:[30], batch:[351/390], time used: 1 min 0 sec, loss:[total:-10.708868, consistency:0.774691, entropy:2.296712]
+2022-08-21 06:45:15,926--epoch:[30], avg loss: total:-10.683666, consistency:0.790092, entropy:2.294752, time to run this epoch: 1 min 6 sec
+2022-08-21 06:45:15,927--Checkpoint ...
+2022-08-21 06:45:16,349--Train ...
+2022-08-21 06:45:16,804--epoch:[31], batch:[0/390], time used: 0 min 0 sec, loss:[total:-10.663507, consistency:0.789382, entropy:2.290578]
+2022-08-21 06:45:23,393--epoch:[31], batch:[39/390], time used: 0 min 7 sec, loss:[total:-10.740497, consistency:0.755585, entropy:2.299216]
+2022-08-21 06:45:30,093--epoch:[31], batch:[78/390], time used: 0 min 13 sec, loss:[total:-10.595090, consistency:0.891181, entropy:2.297254]
+2022-08-21 06:45:36,655--epoch:[31], batch:[117/390], time used: 0 min 20 sec, loss:[total:-10.808425, consistency:0.678454, entropy:2.297376]
+2022-08-21 06:45:43,120--epoch:[31], batch:[156/390], time used: 0 min 26 sec, loss:[total:-10.659643, consistency:0.791931, entropy:2.290315]
+2022-08-21 06:45:49,383--epoch:[31], batch:[195/390], time used: 0 min 33 sec, loss:[total:-10.562283, consistency:0.907982, entropy:2.294053]
+2022-08-21 06:45:55,937--epoch:[31], batch:[234/390], time used: 0 min 39 sec, loss:[total:-10.683481, consistency:0.820158, entropy:2.300728]
+2022-08-21 06:46:02,272--epoch:[31], batch:[273/390], time used: 0 min 45 sec, loss:[total:-10.703415, consistency:0.785515, entropy:2.297786]
+2022-08-21 06:46:08,913--epoch:[31], batch:[312/390], time used: 0 min 52 sec, loss:[total:-10.816020, consistency:0.658375, entropy:2.294879]
+2022-08-21 06:46:16,566--epoch:[31], batch:[351/390], time used: 1 min 0 sec, loss:[total:-10.684597, consistency:0.793870, entropy:2.295693]
+2022-08-21 06:46:23,079--epoch:[31], avg loss: total:-10.680715, consistency:0.791644, entropy:2.294472, time to run this epoch: 1 min 6 sec
+2022-08-21 06:46:23,080--Checkpoint ...
+2022-08-21 06:46:23,476--Train ...
+2022-08-21 06:46:23,945--epoch:[32], batch:[0/390], time used: 0 min 0 sec, loss:[total:-10.620871, consistency:0.850138, entropy:2.294202]
+2022-08-21 06:46:30,333--epoch:[32], batch:[39/390], time used: 0 min 6 sec, loss:[total:-10.696534, consistency:0.795146, entropy:2.298336]
+2022-08-21 06:46:37,250--epoch:[32], batch:[78/390], time used: 0 min 13 sec, loss:[total:-10.847999, consistency:0.638936, entropy:2.297387]
+2022-08-21 06:46:43,608--epoch:[32], batch:[117/390], time used: 0 min 20 sec, loss:[total:-10.689354, consistency:0.810423, entropy:2.299955]
+2022-08-21 06:46:49,983--epoch:[32], batch:[156/390], time used: 0 min 26 sec, loss:[total:-10.918797, consistency:0.579747, entropy:2.299709]
+2022-08-21 06:46:56,514--epoch:[32], batch:[195/390], time used: 0 min 33 sec, loss:[total:-10.783088, consistency:0.706444, entropy:2.297906]
+2022-08-21 06:47:02,977--epoch:[32], batch:[234/390], time used: 0 min 39 sec, loss:[total:-10.742064, consistency:0.703458, entropy:2.289105]
+2022-08-21 06:47:09,346--epoch:[32], batch:[273/390], time used: 0 min 45 sec, loss:[total:-10.551681, consistency:0.877272, entropy:2.285790]
+2022-08-21 06:47:15,753--epoch:[32], batch:[312/390], time used: 0 min 52 sec, loss:[total:-10.635081, consistency:0.812239, entropy:2.289464]
+2022-08-21 06:47:22,392--epoch:[32], batch:[351/390], time used: 0 min 58 sec, loss:[total:-10.636703, consistency:0.856878, entropy:2.298716]
+2022-08-21 06:47:28,789--epoch:[32], avg loss: total:-10.686571, consistency:0.785908, entropy:2.294496, time to run this epoch: 1 min 5 sec
+2022-08-21 06:47:28,790--Checkpoint ...
+2022-08-21 06:47:29,199--Train ...
+2022-08-21 06:47:29,689--epoch:[33], batch:[0/390], time used: 0 min 0 sec, loss:[total:-10.583599, consistency:0.891479, entropy:2.295016]
+2022-08-21 06:47:36,205--epoch:[33], batch:[39/390], time used: 0 min 7 sec, loss:[total:-10.730998, consistency:0.748044, entropy:2.295808]
+2022-08-21 06:47:43,531--epoch:[33], batch:[78/390], time used: 0 min 14 sec, loss:[total:-10.829077, consistency:0.654385, entropy:2.296692]
+2022-08-21 06:47:50,158--epoch:[33], batch:[117/390], time used: 0 min 20 sec, loss:[total:-10.616046, consistency:0.855698, entropy:2.294349]
+2022-08-21 06:47:56,698--epoch:[33], batch:[156/390], time used: 0 min 27 sec, loss:[total:-10.640729, consistency:0.859100, entropy:2.299966]
+2022-08-21 06:48:04,499--epoch:[33], batch:[195/390], time used: 0 min 35 sec, loss:[total:-10.696114, consistency:0.795752, entropy:2.298373]
+2022-08-21 06:48:11,056--epoch:[33], batch:[234/390], time used: 0 min 41 sec, loss:[total:-10.820009, consistency:0.660456, entropy:2.296093]
+2022-08-21 06:48:17,681--epoch:[33], batch:[273/390], time used: 0 min 48 sec, loss:[total:-10.707068, consistency:0.788941, entropy:2.299202]
+2022-08-21 06:48:24,301--epoch:[33], batch:[312/390], time used: 0 min 55 sec, loss:[total:-10.593679, consistency:0.888100, entropy:2.296356]
+2022-08-21 06:48:30,914--epoch:[33], batch:[351/390], time used: 1 min 1 sec, loss:[total:-10.714899, consistency:0.750073, entropy:2.292994]
+2022-08-21 06:48:37,150--epoch:[33], avg loss: total:-10.691212, consistency:0.782674, entropy:2.294777, time to run this epoch: 1 min 7 sec
+2022-08-21 06:48:37,151--Checkpoint ...
+2022-08-21 06:48:37,549--Train ...
+2022-08-21 06:48:38,041--epoch:[34], batch:[0/390], time used: 0 min 0 sec, loss:[total:-10.728291, consistency:0.761948, entropy:2.298048]
+2022-08-21 06:48:44,778--epoch:[34], batch:[39/390], time used: 0 min 7 sec, loss:[total:-10.665728, consistency:0.826909, entropy:2.298527]
+2022-08-21 06:48:51,411--epoch:[34], batch:[78/390], time used: 0 min 13 sec, loss:[total:-10.710640, consistency:0.765450, entropy:2.295218]
+2022-08-21 06:48:57,849--epoch:[34], batch:[117/390], time used: 0 min 20 sec, loss:[total:-10.516481, consistency:0.929128, entropy:2.289122]
+2022-08-21 06:49:04,341--epoch:[34], batch:[156/390], time used: 0 min 26 sec, loss:[total:-10.813500, consistency:0.655835, entropy:2.293867]
+2022-08-21 06:49:10,861--epoch:[34], batch:[195/390], time used: 0 min 33 sec, loss:[total:-10.489121, consistency:0.892644, entropy:2.276353]
+2022-08-21 06:49:17,605--epoch:[34], batch:[234/390], time used: 0 min 40 sec, loss:[total:-10.573635, consistency:0.924105, entropy:2.299548]
+2022-08-21 06:49:24,309--epoch:[34], batch:[273/390], time used: 0 min 46 sec, loss:[total:-10.639267, consistency:0.823506, entropy:2.292555]
+2022-08-21 06:49:30,776--epoch:[34], batch:[312/390], time used: 0 min 53 sec, loss:[total:-10.826414, consistency:0.648910, entropy:2.295065]
+2022-08-21 06:49:37,148--epoch:[34], batch:[351/390], time used: 0 min 59 sec, loss:[total:-10.682610, consistency:0.810633, entropy:2.298648]
+2022-08-21 06:49:43,612--epoch:[34], avg loss: total:-10.679408, consistency:0.793642, entropy:2.294610, time to run this epoch: 1 min 6 sec
+2022-08-21 06:49:43,613--Checkpoint ...
+2022-08-21 06:49:44,026--Train ...
+2022-08-21 06:49:44,505--epoch:[35], batch:[0/390], time used: 0 min 0 sec, loss:[total:-10.690176, consistency:0.799927, entropy:2.298021]
+2022-08-21 06:49:50,945--epoch:[35], batch:[39/390], time used: 0 min 6 sec, loss:[total:-10.736386, consistency:0.735250, entropy:2.294327]
+2022-08-21 06:49:59,136--epoch:[35], batch:[78/390], time used: 0 min 15 sec, loss:[total:-10.673866, consistency:0.803362, entropy:2.295446]
+2022-08-21 06:50:05,434--epoch:[35], batch:[117/390], time used: 0 min 21 sec, loss:[total:-10.669961, consistency:0.802371, entropy:2.294466]
+2022-08-21 06:50:11,961--epoch:[35], batch:[156/390], time used: 0 min 27 sec, loss:[total:-10.690331, consistency:0.765382, entropy:2.291142]
+2022-08-21 06:50:18,322--epoch:[35], batch:[195/390], time used: 0 min 34 sec, loss:[total:-10.599065, consistency:0.783769, entropy:2.276567]
+2022-08-21 06:50:24,825--epoch:[35], batch:[234/390], time used: 0 min 40 sec, loss:[total:-10.625936, consistency:0.805211, entropy:2.286229]
+2022-08-21 06:50:31,359--epoch:[35], batch:[273/390], time used: 0 min 47 sec, loss:[total:-10.796539, consistency:0.688759, entropy:2.297060]
+2022-08-21 06:50:37,989--epoch:[35], batch:[312/390], time used: 0 min 53 sec, loss:[total:-10.818050, consistency:0.657210, entropy:2.295052]
+2022-08-21 06:50:44,417--epoch:[35], batch:[351/390], time used: 1 min 0 sec, loss:[total:-10.698219, consistency:0.777764, entropy:2.295197]
+2022-08-21 06:50:50,663--epoch:[35], avg loss: total:-10.689969, consistency:0.781537, entropy:2.294301, time to run this epoch: 1 min 6 sec
+2022-08-21 06:50:50,664--Checkpoint ...
+2022-08-21 06:50:51,070--Train ...
+2022-08-21 06:50:51,542--epoch:[36], batch:[0/390], time used: 0 min 0 sec, loss:[total:-10.771521, consistency:0.703532, entropy:2.295011]
+2022-08-21 06:50:57,950--epoch:[36], batch:[39/390], time used: 0 min 6 sec, loss:[total:-10.792129, consistency:0.696279, entropy:2.297682]
+2022-08-21 06:51:05,086--epoch:[36], batch:[78/390], time used: 0 min 14 sec, loss:[total:-10.839148, consistency:0.634455, entropy:2.294721]
+2022-08-21 06:51:11,299--epoch:[36], batch:[117/390], time used: 0 min 20 sec, loss:[total:-10.609828, consistency:0.860425, entropy:2.294051]
+2022-08-21 06:51:17,737--epoch:[36], batch:[156/390], time used: 0 min 26 sec, loss:[total:-10.745522, consistency:0.743891, entropy:2.297883]
+2022-08-21 06:51:24,261--epoch:[36], batch:[195/390], time used: 0 min 33 sec, loss:[total:-10.697474, consistency:0.758585, entropy:2.291212]
+2022-08-21 06:51:30,729--epoch:[36], batch:[234/390], time used: 0 min 39 sec, loss:[total:-10.772507, consistency:0.678700, entropy:2.290241]
+2022-08-21 06:51:37,079--epoch:[36], batch:[273/390], time used: 0 min 46 sec, loss:[total:-10.789140, consistency:0.706980, entropy:2.299224]
+2022-08-21 06:51:43,503--epoch:[36], batch:[312/390], time used: 0 min 52 sec, loss:[total:-10.721645, consistency:0.766133, entropy:2.297556]
+2022-08-21 06:51:51,084--epoch:[36], batch:[351/390], time used: 1 min 0 sec, loss:[total:-10.559128, consistency:0.919527, entropy:2.295731]
+2022-08-21 06:51:57,484--epoch:[36], avg loss: total:-10.690023, consistency:0.783676, entropy:2.294740, time to run this epoch: 1 min 6 sec
+2022-08-21 06:51:57,484--Checkpoint ...
+2022-08-21 06:51:57,880--Train ...
+2022-08-21 06:51:58,353--epoch:[37], batch:[0/390], time used: 0 min 0 sec, loss:[total:-10.762645, consistency:0.714873, entropy:2.295504]
+2022-08-21 06:52:05,180--epoch:[37], batch:[39/390], time used: 0 min 7 sec, loss:[total:-10.594130, consistency:0.885700, entropy:2.295966]
+2022-08-21 06:52:11,844--epoch:[37], batch:[78/390], time used: 0 min 13 sec, loss:[total:-10.892311, consistency:0.607582, entropy:2.299979]
+2022-08-21 06:52:18,200--epoch:[37], batch:[117/390], time used: 0 min 20 sec, loss:[total:-10.635349, consistency:0.822601, entropy:2.291590]
+2022-08-21 06:52:24,700--epoch:[37], batch:[156/390], time used: 0 min 26 sec, loss:[total:-10.654078, consistency:0.811071, entropy:2.293030]
+2022-08-21 06:52:31,266--epoch:[37], batch:[195/390], time used: 0 min 33 sec, loss:[total:-10.844932, consistency:0.651169, entropy:2.299220]
+2022-08-21 06:52:37,780--epoch:[37], batch:[234/390], time used: 0 min 39 sec, loss:[total:-10.838205, consistency:0.636864, entropy:2.295014]
+2022-08-21 06:52:44,289--epoch:[37], batch:[273/390], time used: 0 min 46 sec, loss:[total:-10.716627, consistency:0.747904, entropy:2.292906]
+2022-08-21 06:52:50,780--epoch:[37], batch:[312/390], time used: 0 min 52 sec, loss:[total:-10.853530, consistency:0.649232, entropy:2.300552]
+2022-08-21 06:52:57,311--epoch:[37], batch:[351/390], time used: 0 min 59 sec, loss:[total:-10.591925, consistency:0.899629, entropy:2.298311]
+2022-08-21 06:53:03,640--epoch:[37], avg loss: total:-10.697175, consistency:0.776884, entropy:2.294812, time to run this epoch: 1 min 5 sec
+2022-08-21 06:53:03,641--Checkpoint ...
+2022-08-21 06:53:04,051--Train ...
+2022-08-21 06:53:04,528--epoch:[38], batch:[0/390], time used: 0 min 0 sec, loss:[total:-10.623466, consistency:0.864938, entropy:2.297681]
+2022-08-21 06:53:11,072--epoch:[38], batch:[39/390], time used: 0 min 7 sec, loss:[total:-10.571702, consistency:0.898017, entropy:2.293944]
+2022-08-21 06:53:18,037--epoch:[38], batch:[78/390], time used: 0 min 13 sec, loss:[total:-10.686759, consistency:0.807327, entropy:2.298817]
+2022-08-21 06:53:24,672--epoch:[38], batch:[117/390], time used: 0 min 20 sec, loss:[total:-10.593276, consistency:0.877795, entropy:2.294214]
+2022-08-21 06:53:31,337--epoch:[38], batch:[156/390], time used: 0 min 27 sec, loss:[total:-10.659422, consistency:0.786716, entropy:2.289228]
+2022-08-21 06:53:39,164--epoch:[38], batch:[195/390], time used: 0 min 35 sec, loss:[total:-10.805226, consistency:0.690194, entropy:2.299084]
+2022-08-21 06:53:45,568--epoch:[38], batch:[234/390], time used: 0 min 41 sec, loss:[total:-10.715966, consistency:0.741672, entropy:2.291528]
+2022-08-21 06:53:52,182--epoch:[38], batch:[273/390], time used: 0 min 48 sec, loss:[total:-10.673044, consistency:0.811295, entropy:2.296868]
+2022-08-21 06:53:58,802--epoch:[38], batch:[312/390], time used: 0 min 54 sec, loss:[total:-10.736903, consistency:0.730725, entropy:2.293526]
+2022-08-21 06:54:05,520--epoch:[38], batch:[351/390], time used: 1 min 1 sec, loss:[total:-10.839429, consistency:0.659705, entropy:2.299827]
+2022-08-21 06:54:11,743--epoch:[38], avg loss: total:-10.695746, consistency:0.776627, entropy:2.294475, time to run this epoch: 1 min 7 sec
+2022-08-21 06:54:11,744--Checkpoint ...
+2022-08-21 06:54:12,152--Train ...
+2022-08-21 06:54:12,616--epoch:[39], batch:[0/390], time used: 0 min 0 sec, loss:[total:-10.745727, consistency:0.726826, entropy:2.294511]
+2022-08-21 06:54:19,164--epoch:[39], batch:[39/390], time used: 0 min 7 sec, loss:[total:-10.594041, consistency:0.875605, entropy:2.293929]
+2022-08-21 06:54:26,045--epoch:[39], batch:[78/390], time used: 0 min 13 sec, loss:[total:-10.806614, consistency:0.668797, entropy:2.295082]
+2022-08-21 06:54:32,594--epoch:[39], batch:[117/390], time used: 0 min 20 sec, loss:[total:-10.690799, consistency:0.795889, entropy:2.297338]
+2022-08-21 06:54:39,164--epoch:[39], batch:[156/390], time used: 0 min 27 sec, loss:[total:-10.733564, consistency:0.756504, entropy:2.298014]
+2022-08-21 06:54:45,695--epoch:[39], batch:[195/390], time used: 0 min 33 sec, loss:[total:-10.592607, consistency:0.882013, entropy:2.294924]
+2022-08-21 06:54:52,245--epoch:[39], batch:[234/390], time used: 0 min 40 sec, loss:[total:-10.795138, consistency:0.687309, entropy:2.296489]
+2022-08-21 06:54:58,578--epoch:[39], batch:[273/390], time used: 0 min 46 sec, loss:[total:-10.820278, consistency:0.637166, entropy:2.291489]
+2022-08-21 06:55:05,152--epoch:[39], batch:[312/390], time used: 0 min 52 sec, loss:[total:-10.649853, consistency:0.801556, entropy:2.290282]
+2022-08-21 06:55:11,507--epoch:[39], batch:[351/390], time used: 0 min 59 sec, loss:[total:-10.577011, consistency:0.816283, entropy:2.278659]
+2022-08-21 06:55:17,739--epoch:[39], avg loss: total:-10.698531, consistency:0.774655, entropy:2.294637, time to run this epoch: 1 min 5 sec
+2022-08-21 06:55:17,739--Checkpoint ...
+2022-08-21 06:55:18,598--Train ...
+2022-08-21 06:55:19,087--epoch:[40], batch:[0/390], time used: 0 min 0 sec, loss:[total:-10.679979, consistency:0.810492, entropy:2.298094]
+2022-08-21 06:55:25,881--epoch:[40], batch:[39/390], time used: 0 min 7 sec, loss:[total:-10.801689, consistency:0.660628, entropy:2.292463]
+2022-08-21 06:55:33,527--epoch:[40], batch:[78/390], time used: 0 min 14 sec, loss:[total:-10.751566, consistency:0.743462, entropy:2.299006]
+2022-08-21 06:55:40,115--epoch:[40], batch:[117/390], time used: 0 min 21 sec, loss:[total:-10.758671, consistency:0.714651, entropy:2.294664]
+2022-08-21 06:55:46,568--epoch:[40], batch:[156/390], time used: 0 min 27 sec, loss:[total:-10.730773, consistency:0.747135, entropy:2.295582]
+2022-08-21 06:55:53,052--epoch:[40], batch:[195/390], time used: 0 min 34 sec, loss:[total:-10.872830, consistency:0.636353, entropy:2.301837]
+2022-08-21 06:55:59,395--epoch:[40], batch:[234/390], time used: 0 min 40 sec, loss:[total:-10.889386, consistency:0.614902, entropy:2.300858]
+2022-08-21 06:56:06,072--epoch:[40], batch:[273/390], time used: 0 min 47 sec, loss:[total:-10.521656, consistency:0.950257, entropy:2.294383]
+2022-08-21 06:56:12,495--epoch:[40], batch:[312/390], time used: 0 min 53 sec, loss:[total:-10.616240, consistency:0.849690, entropy:2.293186]
+2022-08-21 06:56:18,944--epoch:[40], batch:[351/390], time used: 1 min 0 sec, loss:[total:-10.732035, consistency:0.769088, entropy:2.300225]
+2022-08-21 06:56:25,105--epoch:[40], avg loss: total:-10.704048, consistency:0.769511, entropy:2.294712, time to run this epoch: 1 min 6 sec
+2022-08-21 06:56:25,106--Checkpoint ...
+2022-08-21 06:56:25,938--Train ...
+2022-08-21 06:56:26,421--epoch:[41], batch:[0/390], time used: 0 min 0 sec, loss:[total:-10.730609, consistency:0.747496, entropy:2.295621]
+2022-08-21 06:56:32,999--epoch:[41], batch:[39/390], time used: 0 min 7 sec, loss:[total:-10.777690, consistency:0.702068, entropy:2.295952]
+2022-08-21 06:56:40,216--epoch:[41], batch:[78/390], time used: 0 min 14 sec, loss:[total:-10.640581, consistency:0.837151, entropy:2.295547]
+2022-08-21 06:56:46,763--epoch:[41], batch:[117/390], time used: 0 min 20 sec, loss:[total:-10.718785, consistency:0.772290, entropy:2.298215]
+2022-08-21 06:56:53,157--epoch:[41], batch:[156/390], time used: 0 min 27 sec, loss:[total:-10.797722, consistency:0.650906, entropy:2.289726]
+2022-08-21 06:56:59,555--epoch:[41], batch:[195/390], time used: 0 min 33 sec, loss:[total:-10.819739, consistency:0.674698, entropy:2.298887]
+2022-08-21 06:57:06,017--epoch:[41], batch:[234/390], time used: 0 min 40 sec, loss:[total:-10.646026, consistency:0.838609, entropy:2.296927]
+2022-08-21 06:57:12,469--epoch:[41], batch:[273/390], time used: 0 min 46 sec, loss:[total:-10.802962, consistency:0.682816, entropy:2.297156]
+2022-08-21 06:57:19,696--epoch:[41], batch:[312/390], time used: 0 min 53 sec, loss:[total:-10.716422, consistency:0.750188, entropy:2.293322]
+2022-08-21 06:57:26,552--epoch:[41], batch:[351/390], time used: 1 min 0 sec, loss:[total:-10.562235, consistency:0.923158, entropy:2.297079]
+2022-08-21 06:57:32,962--epoch:[41], avg loss: total:-10.698504, consistency:0.776829, entropy:2.295067, time to run this epoch: 1 min 7 sec
+2022-08-21 06:57:32,963--Checkpoint ...
+2022-08-21 06:57:33,365--Train ...
+2022-08-21 06:57:33,835--epoch:[42], batch:[0/390], time used: 0 min 0 sec, loss:[total:-10.541438, consistency:0.915553, entropy:2.291398]
+2022-08-21 06:57:40,576--epoch:[42], batch:[39/390], time used: 0 min 7 sec, loss:[total:-10.729225, consistency:0.733270, entropy:2.292499]
+2022-08-21 06:57:47,084--epoch:[42], batch:[78/390], time used: 0 min 13 sec, loss:[total:-10.631860, consistency:0.830731, entropy:2.292518]
+2022-08-21 06:57:53,743--epoch:[42], batch:[117/390], time used: 0 min 20 sec, loss:[total:-10.882699, consistency:0.589188, entropy:2.294378]
+2022-08-21 06:58:00,108--epoch:[42], batch:[156/390], time used: 0 min 26 sec, loss:[total:-10.603952, consistency:0.892191, entropy:2.299229]
+2022-08-21 06:58:06,747--epoch:[42], batch:[195/390], time used: 0 min 33 sec, loss:[total:-10.622379, consistency:0.843190, entropy:2.293114]
+2022-08-21 06:58:13,170--epoch:[42], batch:[234/390], time used: 0 min 39 sec, loss:[total:-10.477030, consistency:1.001720, entropy:2.295750]
+2022-08-21 06:58:19,600--epoch:[42], batch:[273/390], time used: 0 min 46 sec, loss:[total:-10.834588, consistency:0.629364, entropy:2.292790]
+2022-08-21 06:58:26,130--epoch:[42], batch:[312/390], time used: 0 min 52 sec, loss:[total:-10.571342, consistency:0.899765, entropy:2.294221]
+2022-08-21 06:58:32,659--epoch:[42], batch:[351/390], time used: 0 min 59 sec, loss:[total:-10.648199, consistency:0.846691, entropy:2.298978]
+2022-08-21 06:58:38,970--epoch:[42], avg loss: total:-10.704361, consistency:0.769284, entropy:2.294729, time to run this epoch: 1 min 5 sec
+2022-08-21 06:58:38,971--Checkpoint ...
+2022-08-21 06:58:39,380--Train ...
+2022-08-21 06:58:39,852--epoch:[43], batch:[0/390], time used: 0 min 0 sec, loss:[total:-10.659320, consistency:0.789741, entropy:2.289812]
+2022-08-21 06:58:46,166--epoch:[43], batch:[39/390], time used: 0 min 6 sec, loss:[total:-10.793047, consistency:0.696201, entropy:2.297849]
+2022-08-21 06:58:53,153--epoch:[43], batch:[78/390], time used: 0 min 13 sec, loss:[total:-10.754995, consistency:0.720883, entropy:2.295176]
+2022-08-21 06:58:59,543--epoch:[43], batch:[117/390], time used: 0 min 20 sec, loss:[total:-10.852834, consistency:0.590296, entropy:2.288626]
+2022-08-21 06:59:05,957--epoch:[43], batch:[156/390], time used: 0 min 26 sec, loss:[total:-10.760351, consistency:0.705824, entropy:2.293235]
+2022-08-21 06:59:13,554--epoch:[43], batch:[195/390], time used: 0 min 34 sec, loss:[total:-10.612293, consistency:0.859717, entropy:2.294402]
+2022-08-21 06:59:19,887--epoch:[43], batch:[234/390], time used: 0 min 40 sec, loss:[total:-10.552604, consistency:0.917175, entropy:2.293956]
+2022-08-21 06:59:26,180--epoch:[43], batch:[273/390], time used: 0 min 46 sec, loss:[total:-10.689034, consistency:0.802324, entropy:2.298271]
+2022-08-21 06:59:32,647--epoch:[43], batch:[312/390], time used: 0 min 53 sec, loss:[total:-10.689116, consistency:0.786340, entropy:2.295091]
+2022-08-21 06:59:39,214--epoch:[43], batch:[351/390], time used: 0 min 59 sec, loss:[total:-10.704457, consistency:0.789163, entropy:2.298724]
+2022-08-21 06:59:45,443--epoch:[43], avg loss: total:-10.707466, consistency:0.765712, entropy:2.294636, time to run this epoch: 1 min 6 sec
+2022-08-21 06:59:45,445--Checkpoint ...
+2022-08-21 06:59:45,844--Train ...
+2022-08-21 06:59:46,306--epoch:[44], batch:[0/390], time used: 0 min 0 sec, loss:[total:-10.744735, consistency:0.748319, entropy:2.298611]
+2022-08-21 06:59:53,096--epoch:[44], batch:[39/390], time used: 0 min 7 sec, loss:[total:-10.667330, consistency:0.789460, entropy:2.291358]
+2022-08-21 07:00:00,127--epoch:[44], batch:[78/390], time used: 0 min 14 sec, loss:[total:-10.786644, consistency:0.701284, entropy:2.297585]
+2022-08-21 07:00:06,624--epoch:[44], batch:[117/390], time used: 0 min 20 sec, loss:[total:-10.784635, consistency:0.696894, entropy:2.296306]
+2022-08-21 07:00:13,241--epoch:[44], batch:[156/390], time used: 0 min 27 sec, loss:[total:-10.661965, consistency:0.810079, entropy:2.294409]
+2022-08-21 07:00:19,723--epoch:[44], batch:[195/390], time used: 0 min 33 sec, loss:[total:-10.515862, consistency:0.948927, entropy:2.292958]
+2022-08-21 07:00:26,292--epoch:[44], batch:[234/390], time used: 0 min 40 sec, loss:[total:-10.881379, consistency:0.612890, entropy:2.298854]
+2022-08-21 07:00:32,924--epoch:[44], batch:[273/390], time used: 0 min 47 sec, loss:[total:-10.680043, consistency:0.806454, entropy:2.297299]
+2022-08-21 07:00:39,307--epoch:[44], batch:[312/390], time used: 0 min 53 sec, loss:[total:-10.756700, consistency:0.727547, entropy:2.296849]
+2022-08-21 07:00:45,665--epoch:[44], batch:[351/390], time used: 0 min 59 sec, loss:[total:-10.778842, consistency:0.700038, entropy:2.295776]
+2022-08-21 07:00:52,068--epoch:[44], avg loss: total:-10.707922, consistency:0.767572, entropy:2.295099, time to run this epoch: 1 min 6 sec
+2022-08-21 07:00:52,069--Checkpoint ...
+2022-08-21 07:00:52,482--Train ...
+2022-08-21 07:00:52,959--epoch:[45], batch:[0/390], time used: 0 min 0 sec, loss:[total:-10.681009, consistency:0.772817, entropy:2.290765]
+2022-08-21 07:00:59,382--epoch:[45], batch:[39/390], time used: 0 min 6 sec, loss:[total:-10.405993, consistency:1.068006, entropy:2.294800]
+2022-08-21 07:01:07,492--epoch:[45], batch:[78/390], time used: 0 min 15 sec, loss:[total:-10.664403, consistency:0.760557, entropy:2.284992]
+2022-08-21 07:01:14,076--epoch:[45], batch:[117/390], time used: 0 min 21 sec, loss:[total:-10.658466, consistency:0.827012, entropy:2.297096]
+2022-08-21 07:01:20,520--epoch:[45], batch:[156/390], time used: 0 min 28 sec, loss:[total:-10.709032, consistency:0.765492, entropy:2.294905]
+2022-08-21 07:01:26,940--epoch:[45], batch:[195/390], time used: 0 min 34 sec, loss:[total:-10.515060, consistency:0.974989, entropy:2.298010]
+2022-08-21 07:01:33,568--epoch:[45], batch:[234/390], time used: 0 min 41 sec, loss:[total:-10.844689, consistency:0.612310, entropy:2.291400]
+2022-08-21 07:01:40,013--epoch:[45], batch:[273/390], time used: 0 min 47 sec, loss:[total:-10.649852, consistency:0.839246, entropy:2.297820]
+2022-08-21 07:01:46,584--epoch:[45], batch:[312/390], time used: 0 min 54 sec, loss:[total:-10.745451, consistency:0.728576, entropy:2.294806]
+2022-08-21 07:01:53,190--epoch:[45], batch:[351/390], time used: 1 min 0 sec, loss:[total:-10.652588, consistency:0.831896, entropy:2.296897]
+2022-08-21 07:01:59,420--epoch:[45], avg loss: total:-10.708500, consistency:0.766936, entropy:2.295087, time to run this epoch: 1 min 6 sec
+2022-08-21 07:01:59,421--Checkpoint ...
+2022-08-21 07:01:59,842--Train ...
+2022-08-21 07:02:00,298--epoch:[46], batch:[0/390], time used: 0 min 0 sec, loss:[total:-10.812445, consistency:0.654934, entropy:2.293476]
+2022-08-21 07:02:06,777--epoch:[46], batch:[39/390], time used: 0 min 6 sec, loss:[total:-10.823178, consistency:0.665045, entropy:2.297645]
+2022-08-21 07:02:13,634--epoch:[46], batch:[78/390], time used: 0 min 13 sec, loss:[total:-10.534207, consistency:0.947207, entropy:2.296283]
+2022-08-21 07:02:20,352--epoch:[46], batch:[117/390], time used: 0 min 20 sec, loss:[total:-10.735804, consistency:0.696236, entropy:2.286408]
+2022-08-21 07:02:26,664--epoch:[46], batch:[156/390], time used: 0 min 26 sec, loss:[total:-10.724741, consistency:0.772541, entropy:2.299456]
+2022-08-21 07:02:33,366--epoch:[46], batch:[195/390], time used: 0 min 33 sec, loss:[total:-10.854666, consistency:0.574176, entropy:2.285768]
+2022-08-21 07:02:39,821--epoch:[46], batch:[234/390], time used: 0 min 39 sec, loss:[total:-10.626648, consistency:0.822328, entropy:2.289795]
+2022-08-21 07:02:46,263--epoch:[46], batch:[273/390], time used: 0 min 46 sec, loss:[total:-10.845911, consistency:0.634676, entropy:2.296117]
+2022-08-21 07:02:54,050--epoch:[46], batch:[312/390], time used: 0 min 54 sec, loss:[total:-10.853335, consistency:0.645627, entropy:2.299793]
+2022-08-21 07:03:00,400--epoch:[46], batch:[351/390], time used: 1 min 0 sec, loss:[total:-10.693676, consistency:0.806599, entropy:2.300055]
+2022-08-21 07:03:06,528--epoch:[46], avg loss: total:-10.705574, consistency:0.768046, entropy:2.294724, time to run this epoch: 1 min 6 sec
+2022-08-21 07:03:06,529--Checkpoint ...
+2022-08-21 07:03:06,942--Train ...
+2022-08-21 07:03:07,416--epoch:[47], batch:[0/390], time used: 0 min 0 sec, loss:[total:-10.776316, consistency:0.708473, entropy:2.296958]
+2022-08-21 07:03:13,729--epoch:[47], batch:[39/390], time used: 0 min 6 sec, loss:[total:-10.752699, consistency:0.719779, entropy:2.294496]
+2022-08-21 07:03:21,384--epoch:[47], batch:[78/390], time used: 0 min 14 sec, loss:[total:-10.753871, consistency:0.693433, entropy:2.289461]
+2022-08-21 07:03:28,150--epoch:[47], batch:[117/390], time used: 0 min 21 sec, loss:[total:-10.657704, consistency:0.825579, entropy:2.296657]
+2022-08-21 07:03:34,738--epoch:[47], batch:[156/390], time used: 0 min 27 sec, loss:[total:-10.815165, consistency:0.674132, entropy:2.297859]
+2022-08-21 07:03:41,441--epoch:[47], batch:[195/390], time used: 0 min 34 sec, loss:[total:-10.745074, consistency:0.732587, entropy:2.295532]
+2022-08-21 07:03:48,426--epoch:[47], batch:[234/390], time used: 0 min 41 sec, loss:[total:-10.695489, consistency:0.803085, entropy:2.299715]
+2022-08-21 07:03:55,289--epoch:[47], batch:[273/390], time used: 0 min 48 sec, loss:[total:-10.872467, consistency:0.626585, entropy:2.299810]
+2022-08-21 07:04:01,779--epoch:[47], batch:[312/390], time used: 0 min 54 sec, loss:[total:-10.731839, consistency:0.757843, entropy:2.297936]
+2022-08-21 07:04:08,175--epoch:[47], batch:[351/390], time used: 1 min 1 sec, loss:[total:-10.657091, consistency:0.840182, entropy:2.299455]
+2022-08-21 07:04:14,548--epoch:[47], avg loss: total:-10.705879, consistency:0.768534, entropy:2.294883, time to run this epoch: 1 min 7 sec
+2022-08-21 07:04:14,549--Checkpoint ...
+2022-08-21 07:04:14,977--Train ...
+2022-08-21 07:04:15,455--epoch:[48], batch:[0/390], time used: 0 min 0 sec, loss:[total:-10.847042, consistency:0.627407, entropy:2.294890]
+2022-08-21 07:04:21,810--epoch:[48], batch:[39/390], time used: 0 min 6 sec, loss:[total:-10.598631, consistency:0.849366, entropy:2.289599]
+2022-08-21 07:04:28,589--epoch:[48], batch:[78/390], time used: 0 min 13 sec, loss:[total:-10.680155, consistency:0.805088, entropy:2.297049]
+2022-08-21 07:04:34,963--epoch:[48], batch:[117/390], time used: 0 min 19 sec, loss:[total:-10.695661, consistency:0.763612, entropy:2.291855]
+2022-08-21 07:04:41,346--epoch:[48], batch:[156/390], time used: 0 min 26 sec, loss:[total:-10.644961, consistency:0.852694, entropy:2.299531]
+2022-08-21 07:04:48,938--epoch:[48], batch:[195/390], time used: 0 min 33 sec, loss:[total:-10.637510, consistency:0.849504, entropy:2.297403]
+2022-08-21 07:04:55,382--epoch:[48], batch:[234/390], time used: 0 min 40 sec, loss:[total:-10.661272, consistency:0.814704, entropy:2.295195]
+2022-08-21 07:05:01,692--epoch:[48], batch:[273/390], time used: 0 min 46 sec, loss:[total:-10.631023, consistency:0.861821, entropy:2.298569]
+2022-08-21 07:05:08,113--epoch:[48], batch:[312/390], time used: 0 min 53 sec, loss:[total:-10.707695, consistency:0.789951, entropy:2.299529]
+2022-08-21 07:05:14,613--epoch:[48], batch:[351/390], time used: 0 min 59 sec, loss:[total:-10.607877, consistency:0.849834, entropy:2.291542]
+2022-08-21 07:05:20,910--epoch:[48], avg loss: total:-10.714552, consistency:0.759902, entropy:2.294891, time to run this epoch: 1 min 5 sec
+2022-08-21 07:05:20,911--Checkpoint ...
+2022-08-21 07:05:21,332--Train ...
+2022-08-21 07:05:21,799--epoch:[49], batch:[0/390], time used: 0 min 0 sec, loss:[total:-10.506119, consistency:0.984661, entropy:2.298156]
+2022-08-21 07:05:28,277--epoch:[49], batch:[39/390], time used: 0 min 6 sec, loss:[total:-10.692163, consistency:0.769557, entropy:2.292344]
+2022-08-21 07:05:35,049--epoch:[49], batch:[78/390], time used: 0 min 13 sec, loss:[total:-10.744899, consistency:0.724343, entropy:2.293849]
+2022-08-21 07:05:41,451--epoch:[49], batch:[117/390], time used: 0 min 20 sec, loss:[total:-10.766318, consistency:0.734233, entropy:2.300110]
+2022-08-21 07:05:48,002--epoch:[49], batch:[156/390], time used: 0 min 26 sec, loss:[total:-10.616227, consistency:0.836478, entropy:2.290541]
+2022-08-21 07:05:54,405--epoch:[49], batch:[195/390], time used: 0 min 33 sec, loss:[total:-10.778491, consistency:0.668895, entropy:2.289477]
+2022-08-21 07:06:00,914--epoch:[49], batch:[234/390], time used: 0 min 39 sec, loss:[total:-10.754833, consistency:0.713145, entropy:2.293596]
+2022-08-21 07:06:07,327--epoch:[49], batch:[273/390], time used: 0 min 45 sec, loss:[total:-10.591996, consistency:0.900574, entropy:2.298514]
+2022-08-21 07:06:14,054--epoch:[49], batch:[312/390], time used: 0 min 52 sec, loss:[total:-10.711929, consistency:0.755421, entropy:2.293470]
+2022-08-21 07:06:20,695--epoch:[49], batch:[351/390], time used: 0 min 59 sec, loss:[total:-10.687883, consistency:0.787670, entropy:2.295111]
+2022-08-21 07:06:27,059--epoch:[49], avg loss: total:-10.715986, consistency:0.758988, entropy:2.294995, time to run this epoch: 1 min 5 sec
+2022-08-21 07:06:27,060--Checkpoint ...
