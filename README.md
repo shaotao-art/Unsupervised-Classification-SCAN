@@ -13,11 +13,11 @@ this is a PyTorch implementation of the paper: [SCAN: Learning to Classify Image
 ```
 ## Results
 
-|  step   | acc  |
-|  ----  | ----  |
-| kmeans after pretext  | 0.3466 |
-| scan  | 0.7562 |
-| selflabel  | 0.841 |
+|  step   | acc  | model|
+|  ----  | ----  | ----|
+| kmeans after pretext  | 0.3466 | [pretext](https://drive.google.com/file/d/1-Ib1HJv9tmk0ckqRMwQdGMdFTPjV_9EW/view?usp=sharing)|
+| scan  | 0.7562 |[scan](https://drive.google.com/file/d/1-CAwZ7FGH8CH6es0ie0l_07U8N9pXjgI/view?usp=sharing)|
+| selflabel  | 0.841 |[selflabel](https://drive.google.com/file/d/1-QKepjxMBSFvcRwt48SU6PAorKmHhjBo/view?usp=sharing)|
 
 ## Usage
 
