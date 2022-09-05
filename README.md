@@ -11,6 +11,10 @@ this is a PyTorch implementation of the paper: [SCAN: Learning to Classify Image
     pytorch 
     torchvision
 ```
+## Open in colab
+* ***train.ipynb*** to train
+* ***explore.ipynb*** to test acc of model
+
 ## Results
 
 |  step   | acc  | model|
